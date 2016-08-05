@@ -5,3 +5,10 @@ C:\CLR\TFS\Tools\Code Analyzer\Libraries\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\TFS\Tools\Code Analyzer\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\Libraries\obj\Debug\CodeAnalyzer.Libraries.dll
 C:\CLR\TFS\Tools\Code Analyzer\Libraries\obj\Debug\CodeAnalyzer.Libraries.pdb
+C:\CLR\GitHub\CodeAnalyzer\Libraries\bin\Debug\CodeAnalyzer.Libraries.dll
+C:\CLR\GitHub\CodeAnalyzer\Libraries\bin\Debug\CodeAnalyzer.Libraries.pdb
+C:\CLR\GitHub\CodeAnalyzer\Libraries\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\GitHub\CodeAnalyzer\Libraries\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\GitHub\CodeAnalyzer\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache
+C:\CLR\GitHub\CodeAnalyzer\Libraries\obj\Debug\CodeAnalyzer.Libraries.dll
+C:\CLR\GitHub\CodeAnalyzer\Libraries\obj\Debug\CodeAnalyzer.Libraries.pdb

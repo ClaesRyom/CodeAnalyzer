@@ -5,3 +5,10 @@ C:\CLR\TFS\Tools\Code Analyzer\Version\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\TFS\Tools\Code Analyzer\Version\obj\Debug\Version.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\Version\obj\Debug\CodeAnalyzer.Version.dll
 C:\CLR\TFS\Tools\Code Analyzer\Version\obj\Debug\CodeAnalyzer.Version.pdb
+C:\CLR\GitHub\CodeAnalyzer\Version\bin\Debug\CodeAnalyzer.Version.dll
+C:\CLR\GitHub\CodeAnalyzer\Version\bin\Debug\CodeAnalyzer.Version.pdb
+C:\CLR\GitHub\CodeAnalyzer\Version\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\GitHub\CodeAnalyzer\Version\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\GitHub\CodeAnalyzer\Version\obj\Debug\Version.csprojResolveAssemblyReference.cache
+C:\CLR\GitHub\CodeAnalyzer\Version\obj\Debug\CodeAnalyzer.Version.dll
+C:\CLR\GitHub\CodeAnalyzer\Version\obj\Debug\CodeAnalyzer.Version.pdb
