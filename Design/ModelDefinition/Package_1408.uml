@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="db03d592-86f3-4121-a8b8-ac35ef278d6d"
+  name="CodeAnalyser"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="b56d31eb-7871-4704-9335-8d04bcdffdda"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyser"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5d7602f7-9e86-4bda-b18e-c0729f9d3582"
+        LastKnownName="Configuration"
+        LastKnownLocation="Package1_1408.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ef52279b-6815-45d9-b8b3-2cf310e774cb"
+        LastKnownName="Mediator"
+        LastKnownLocation="Package6_1408.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f56fb3d6-82f5-49e2-b4f3-53894b177414"
+        LastKnownName="Coordination"
+        LastKnownLocation="Package_1058.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

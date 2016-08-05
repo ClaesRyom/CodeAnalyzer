@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="cc0ab9a9-f532-49cf-9d44-605c0415546f"
+  name="Mediator"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="8805fc6d-ffce-4b06-9cef-e9f2b08c33d2"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyzer.Mediator"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a58a0489-6596-4fe7-9d2d-72d6ce039e09"
+        LastKnownName="Security"
+        LastKnownLocation="Package3_1100.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="373c76f7-aad1-4d8d-9b99-e14b35c31422"
+        LastKnownName="DataAccess"
+        LastKnownLocation="Package4_1100.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="da5d5612-63a7-4942-b8c7-a7319ac51d2a"
+        LastKnownName="Proxies"
+        LastKnownLocation="Package5_1100.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5770415e-c205-4f6a-8111-4f953278016d"
+        LastKnownName="Managers"
+        LastKnownLocation="Package6_1100.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="6a0242f1-19a5-487e-8a0e-92354af0e02b"
+        LastKnownName="Initialization"
+        LastKnownLocation="Package_1101.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

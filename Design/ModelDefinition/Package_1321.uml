@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner"
+  dslVersion="1.0.0.0"
+  Id="d3415019-3c5d-4932-949d-0b03f3cdbf76"
+  name="Engine" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="b1c21c42-b32c-48c2-b825-c3a16353a9e7"
+        name="EngineProxy"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="7a35b810-dca5-41f9-b263-af5c8094809b">
+            <interfaceMoniker
+              Id="cd8b0add-19e3-49cb-b42e-d3dfb9f48939"
+              LastKnownName="IEngineProxy"
+              LastKnownLocation="Package_1317.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="24d28b0a-231b-4d35-8dbb-908290289860"
+        name="EngineManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="3fdfef53-a0ad-466a-9d24-50c37a036d22"
+            isSubstitutable="false">
+            <classMoniker
+              Id="ff81d41f-b0e1-45a1-a271-78880f976daa"
+              LastKnownName="AbstractManager"
+              LastKnownLocation="Package_1317.uml" />
+          </generalization>
+        </generalsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

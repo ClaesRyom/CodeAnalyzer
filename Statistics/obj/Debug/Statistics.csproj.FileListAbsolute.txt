@@ -1,0 +1,9 @@
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\CodeAnalyzer.Statistics.dll
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\CodeAnalyzer.Statistics.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\obj\Debug\Statistics.csprojResolveAssemblyReference.cache
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\obj\Debug\CodeAnalyzer.Statistics.dll
+C:\CLR\TFS\Tools\Code Analyzer\Statistics\obj\Debug\CodeAnalyzer.Statistics.pdb

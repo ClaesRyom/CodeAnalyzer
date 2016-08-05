@@ -1,0 +1,14 @@
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\Config\Log.config
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\Config\rules.config
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\Config\rules.xsd
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Configuration.dll
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Configuration.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Version.dll
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\CodeAnalyzer.Version.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\obj\Debug\Configuration.csprojResolveAssemblyReference.cache
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\obj\Debug\CodeAnalyzer.Configuration.dll
+C:\CLR\TFS\Tools\Code Analyzer\Configuration\obj\Debug\CodeAnalyzer.Configuration.pdb

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FundamentalBuildingBlocks>
+  <!--
+	Valid Targets Declarations:
+	====================
+		- Console
+		- TraceFile
+		- LogFile
+		- Network
+
+	Valid Log Levels:
+	=============
+		- NONE				// Nothing is logged at all.
+		- VERYLOW		// Only log those msg. that has a very high trace level - that is VERYHIGH.
+		- LOW				// Only log those msg. that has a high and very high trace level - that is HIGH and VERYHIGH.
+		- NORMAL		// Only log those msg. that has a normal, high and very high trace level - that is NORMAL, HIGH and VERYHIGH.
+		- HIGH				// Only log those msg. that has a low, normal, high and very high trace level - that is LOW, NORMAL, HIGH and VERYHIGH.
+		- VERYHIGH		// All msg. are logged - that is VERYLOW, LOW, NORMAL, HIGH and VERYHIGH.
+	-->
+  <Version Major="0" Minor="1"/>
+  <ApplicationLogLevel Enabled="false" Value="NORMAL" />
+  <Filter>
+    <Zone Disabled="" Name="" />
+    <Thread Disabled="" Name="" />
+  </Filter>
+  <TargetDeclarations>
+    
+    <InternalQueue Disabled="false">
+      <Guid Value="{AB4DCED6-6388-4ecb-866B-E56AC2194862}"/>
+      <QueueSize>4</QueueSize>
+    </InternalQueue>
+    
+    <Console Disabled="false">
+      <Guid Value="{F6F5D18E-0B82-47e6-83DF-1571A25CCA6D}"/>
+      <LogLevel Value="NORMAL"/>
+      <Filter>
+        <Message DebugEnabled="true" InfoEnabled="true" WarningEnabled="true" ErrorEnabled="true" />
+        <Zone Disabled="false" Name="StartTestComFramework" />
+        <Zone Disabled="false" Name="TestClient" />
+        <Thread Disabled="false" Name="" />
+      </Filter>
+    </Console>
+    
+    <Email Disabled="false">
+      <Guid Value="{22055D9C-C8E5-42f4-BE7C-6F4D1CE29F57}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <Filter>
+        <Message DebugEnabled="false" InfoEnabled="false" WarningEnabled="false" ErrorEnabled="true" />
+      </Filter>
+      <MailSetup>
+        <From>fundamentalbuildingblocks@gmail.com</From>
+        <Authentication Username="fundamentalbuildingblocks@gmail.com" Password="fbbfbb" />
+        <Ssl Enabled="true" />
+        <Smtp Host="smtp.gmail.com" Port="587" />
+        <Recipients>
+          <To>claesryom@gmail.com</To>
+          <Cc></Cc>
+          <Bcc></Bcc>
+        </Recipients>
+      </MailSetup>
+    </Email>
+    
+    <EventLog Disabled="false">
+      <Guid Value="{B3BF8CA7-4548-4760-9B25-61BD33A2E019}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <LogName Value="Octopus"/>
+      <SourceName Value="Octopus"/>
+      <Filter>
+        <Message DebugEnabled="false" InfoEnabled="false" WarningEnabled="true" ErrorEnabled="true" />
+        <Zone Disabled="true" Name="StartTestComFramework" />
+        <Zone Disabled="true" Name="TestClient" />
+        <Zone Disabled="true" Name="Out" />
+        <Thread Disabled="true" Name="Receiver" />
+        <Thread Disabled="true" Name="TheRealMonitor" />
+      </Filter>
+    </EventLog>
+    
+    <TraceFile Disabled="false">
+      <Guid Value="{E34B3AEA-5490-4c89-8277-0493E1D9A61D}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <Filename Value="C:/FundamentalBuildingBlocks/ClientTraceFile01.txt"/>
+      <MaxSize Value="1048576" />
+    </TraceFile>
+    
+    <LogFile Disabled="false">
+      <Guid Value="{F4F86D42-ABCE-4bd4-8E79-0EA7076D11DC}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <Filename Value="C:\\FundamentalBuildingBlocks\\ClientLogFile.txt"/>
+      <MaxSize Value="1048576" />
+    </LogFile>
+    
+    <XmlFile Disabled="false">
+      <Guid Value="{9B987AC0-2C6E-4beb-8763-3B48E64946D5}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <XmlFilename Value="C:\\FundamentalBuildingBlocks\\FbbLog.xml"/>
+      <XsltFilename UseDefault="true" Value="C:\\FundamentalBuildingBlocks\\FbbDefault.xslt"/>
+    </XmlFile>
+
+    <Network Disabled="false">
+      <Guid Value="{ABE29903-CB87-4ab2-872C-17719E4B3A9B}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <IPEndPoint Ip="localhost" Port="8082"/>
+    </Network>
+    
+    <Telnet Disabled="true">
+      <Guid Value="{B7F14EA4-C734-4595-9A90-6062551CA069}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <IPEndPoint Ip="localhost" Port="8082"/>
+    </Telnet>
+
+    <MSSQLDatabase Disabled="true">
+      <Guid Value="{CEFF2CA0-C396-4D81-8A98-96FF3FB1C9DB}"/>
+      <LogLevel Value="VERYHIGH"/>
+      <ConnectionString Value="metadata=res://FBBToDatabase/Model.FBBLogModel.csdl|res://FBBToDatabase/Model.FBBLogModel.ssdl|res://FBBToDatabase/Model.FBBLogModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLEXPRESS;initial catalog=FBBToDatabase;persist security info=True;user id=clr;password=clr123;multipleactiveresultsets=True;App=EntityFramework&quot;" providerName="System.Data.EntityClient" />
+      <SelfHostedService Enable="" Uri="" />
+    </MSSQLDatabase>
+    
+  </TargetDeclarations>
+</FundamentalBuildingBlocks>

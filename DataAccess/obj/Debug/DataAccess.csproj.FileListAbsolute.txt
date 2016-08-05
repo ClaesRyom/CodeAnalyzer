@@ -1,0 +1,16 @@
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll.config
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.pdb
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\EntityFramework.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.pdb
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\EntityFramework.xml
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.dll
+C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.pdb

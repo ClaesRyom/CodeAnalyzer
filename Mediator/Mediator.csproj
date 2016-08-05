@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C3F6B39-6057-4024-8DF8-25FD9A70FACC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodeAnalyzer.Mediator</RootNamespace>
+    <AssemblyName>CodeAnalyzer.Mediator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FundamentalBuildingBlocks, Version=1.1.0.11, Culture=neutral, PublicKeyToken=939ee4c67acd9bc8, processorArchitecture=MSIL">
+      <HintPath>..\packages\FundamentalBuildingBlocks.1.1.0.11\lib\net451\FundamentalBuildingBlocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConfig.cs">
+      <DependentUpon>AppConfig.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Configuration\Definitions\ICategoryDefinition.cs" />
+    <Compile Include="Configuration\Definitions\IDefinitionsHome.cs" />
+    <Compile Include="Configuration\Definitions\IDirectoryDefinition.cs" />
+    <Compile Include="Configuration\Declarations\ICategoryDeclaration.cs" />
+    <Compile Include="Configuration\Definitions\IRuleDefinition.cs" />
+    <Compile Include="Configuration\IConfigurationFactory.cs" />
+    <Compile Include="Configuration\IConfigurationProxy.cs" />
+    <Compile Include="Configuration\Declarations\IDeclarationsHome.cs" />
+    <Compile Include="Configuration\Definitions\IPathDefinition.cs" />
+    <Compile Include="Configuration\Declarations\ILanguageDeclaration.cs" />
+    <Compile Include="Configuration\Definitions\IFileDefinition.cs" />
+    <Compile Include="Configuration\Declarations\IRuleDeclaration.cs" />
+    <Compile Include="Configuration\IReference.cs" />
+    <Compile Include="Configuration\Reference.cs" />
+    <Compile Include="Configuration\RuleSeverity.cs" />
+    <Compile Include="Configuration\RuleSeverityMapper.cs" />
+    <Compile Include="Configuration\Definitions\IProjectDefinition.cs" />
+    <Compile Include="Configuration\StorageType.cs" />
+    <Compile Include="DataAccess\IConfigDataAccessProxy.cs" />
+    <Compile Include="DataAccess\IDataAccessProxy.cs" />
+    <Compile Include="DataAccess\IMatchDataAccessProxy.cs" />
+    <Compile Include="DataAccess\IVersionDataAccessProxy.cs" />
+    <Compile Include="DirHandler.cs" />
+    <Compile Include="Engine\IEngineProxy.cs" />
+    <Compile Include="Engine\Summaries\ICategorySummary.cs" />
+    <Compile Include="Exceptions\DataAccess\DataAccessComponentException.cs" />
+    <Compile Include="Exceptions\Matches\MatchComponentException.cs" />
+    <Compile Include="Label\Batch.cs" />
+    <Compile Include="Label\IBatch.cs" />
+    <Compile Include="Matches\IMatch.cs" />
+    <Compile Include="Engine\Summaries\IRuleSummary.cs" />
+    <Compile Include="Matches\IMatchInfoReferences.cs" />
+    <Compile Include="Matches\IMatchProxy.cs" />
+    <Compile Include="Matches\MatchStatus.cs" />
+    <Compile Include="Exceptions\Configuration\ConfigurationComponentException.cs" />
+    <Compile Include="Exceptions\Engine\EngineComponentException.cs" />
+    <Compile Include="Exceptions\InitializationException.cs" />
+    <Compile Include="Exceptions\InvalidArgumentException.cs" />
+    <Compile Include="Exceptions\MissingInitializationException.cs" />
+    <Compile Include="Exceptions\Output\OutputComponentException.cs" />
+    <Compile Include="Exceptions\Engine\SearchException.cs" />
+    <Compile Include="Exceptions\Statistics\StatisticsComponentException.cs" />
+    <Compile Include="Identifiers\CounterIds.cs" />
+    <Compile Include="Identifiers\Ids.cs" />
+    <Compile Include="Initialization\IInitializer.cs" />
+    <Compile Include="Output\IOutputProxy.cs" />
+    <Compile Include="Proxies\AbstractComponentProxy.cs" />
+    <Compile Include="Factories\IComponentFactory.cs" />
+    <Compile Include="Security\AbstractKey.cs" />
+    <Compile Include="Cryptography\AesCryptography.cs" />
+    <Compile Include="Security\ComponentAccessKey.cs" />
+    <Compile Include="Security\ComponentDeclaration.cs" />
+    <Compile Include="Security\IComponentAccessKey.cs" />
+    <Compile Include="Security\IKey.cs" />
+    <Compile Include="Security\IKeyKeeper.cs" />
+    <Compile Include="Managers\AbstractManager.cs" />
+    <Compile Include="Managers\IApplicationManager.cs" />
+    <Compile Include="Managers\IManager.cs" />
+    <Compile Include="Output\ReportOutputType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Factories\AbstractComponentFactory.cs" />
+    <Compile Include="Proxies\IComponentProxy.cs" />
+    <Compile Include="Proxies\IKeyConsumer.cs" />
+    <Compile Include="ProxyHome.cs" />
+    <Compile Include="Security\KeyFactory.cs" />
+    <Compile Include="Security\SecurityIds.cs" />
+    <Compile Include="Statistics\IRootDirectoryStatistics.cs" />
+    <Compile Include="Statistics\IStatisticsProxy.cs" />
+    <Compile Include="User\IUser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppConfig.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AppConfig.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="How to NuGet.txt" />
+    <Content Include="Output\Config\ApplCfg.xml" />
+    <Content Include="Output\Config\DefaultXsltFiles\FbbDefault.xslt" />
+    <Content Include="Output\Config\DefaultXsltFiles\FbbStyleOne.xslt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

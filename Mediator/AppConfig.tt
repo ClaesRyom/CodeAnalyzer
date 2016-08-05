@@ -1,0 +1,152 @@
+﻿<#@ template debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Assembly Name="System.Windows.Forms.dll" #>
+<#@ Assembly Name="System.Xml" #>
+<#@ Assembly Name="System.Xml.Linq" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ Import Namespace="System.Xml" #>
+<#@ Import Namespace="System.Xml.Linq" #>
+<#@ Import Namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	var config				= Path.Combine(this.Host.ResolvePath(""), "../ConsoleApp/app.config");
+	var appsetting			= XDocument.Load(config).Descendants("appSettings");
+	var appSettingsMetaData = XDocument.Load(config).Descendants("appSettingsMetaData");
+#>
+// -----------------------------------------------------------------------------
+// <copyright>
+//   Copyright (C) 2012 Claes Ryom, All Rights Reserved. 
+//   
+//   No change, use, reuse or copy to any media or print of this code is allowed  
+//   without the authors specific written permission.
+// </copyright>
+// -----------------------------------------------------------------------------
+namespace CodeAnalyzer.Mediator
+{
+  using System.Configuration;
+
+  using Configuration;
+  using Exceptions.Configuration;
+  using Output;
+  
+
+  public class Settings 
+  {
+<#  
+	List<string> list = new List<string>();
+	foreach (var entry in appSettingsMetaData.Descendants("Group")) 
+	{
+		CreateClass(entry, list);
+		this.WriteLine("");
+	}  
+
+	this.WriteLine("    public Settings()");
+	this.WriteLine("    {");
+	
+	foreach (var s in list)
+	{
+		this.WriteLine("      " + s);
+	}
+	this.WriteLine("    }");
+ #>
+  }
+}
+<#+
+	void CreateClass(XElement entry, List<string> list) 
+	{
+		var classname = entry.Attribute("name").Value;
+
+		this.WriteLine("    public class {0}", classname);
+		this.WriteLine("    {");
+
+		foreach (var element in entry.Descendants("Element")) 
+		{
+			var key  = element.Attribute("key").Value;
+			var type = element.Attribute("type").Value;
+			var desc = element.Attribute("description").Value;	
+		
+			// Accumulating all the keys found in the app.config file. 
+			list.Add(string.Format("{0} {1} = {2}.{3};", type, key.ToLower(), classname, key));
+
+			ValidateType(type);
+
+			this.WriteLine("      /// <summary>");
+			this.WriteLine("      /// {0}", desc);
+			this.WriteLine("      /// </summary>");
+			this.WriteLine("      [System.Diagnostics.CodeAnalysis.SuppressMessage(\"Microsoft.Design\", \"CA1065:DoNotRaiseExceptionsInUnexpectedLocations\")]");
+			this.WriteLine("      public static {0} {1}", type, key);
+			this.WriteLine("      {");
+			this.WriteLine("        get"); 
+			this.WriteLine("        {"); 
+
+			if (type.ToLower() == "string") 
+			{
+				StringPropertyContent(classname, key);
+			}
+			else
+			{
+				PropertyContent(classname, key, type);
+			}
+			this.WriteLine("        }");
+			this.WriteLine("      }");
+			this.WriteLine("");
+		}
+
+		this.WriteLine("    }"); // End of class bracket.
+	}
+#>
+<#+
+  	void StringPropertyContent(string classname, string key) 
+	{
+			this.WriteLine("          string s = ConfigurationManager.AppSettings[\"" + classname + "." + key + "\"];");
+			this.WriteLine("          if (string.IsNullOrEmpty(s))");
+			this.WriteLine("            throw new ConfigurationComponentException(\"Configuration key '{0}' from the group '{1}' was either null or empty.\");", key, classname);
+			this.WriteLine("");
+			this.WriteLine("          return s.Trim();");
+	}
+#>
+<#+
+	void PropertyContent(string classname, string key, string type) 
+	{
+			this.WriteLine("          string s = ConfigurationManager.AppSettings[\"" + classname + "." + key + "\"];");
+			this.WriteLine("          if (string.IsNullOrEmpty(s))");
+			this.WriteLine("            throw new ConfigurationComponentException(\"Configuration key '{0}' from the group '{1}' was either null or empty.\");", key, classname);
+			this.WriteLine("");
+			this.WriteLine("          {0} result;", type);
+			this.WriteLine("          if (!{0}.TryParse(s.Trim(), out result))", type);
+			this.WriteLine("            throw new ConfigurationComponentException(\"Unable to parse the configuration key '{0}' from the group '{1}'.\");", key, classname);
+			this.WriteLine("");
+			this.WriteLine("          return result;");
+	}
+#>
+<#+ 
+	bool ValidateType(string type) 
+	{
+		switch (type) 
+		{
+			case "bool":    return true;
+			case "byte":    return true;
+			case "sbyte":   return true;
+			case "char":    return true;
+			case "decimal": return true;
+			case "double":  return true;
+			case "float":   return true;
+			case "int":     return true;
+			case "uint":    return true;
+			case "long":    return true;
+			case "ulong":   return true;
+			case "short":   return true;
+			case "ushort":  return true;
+			case "string":  return true;
+		    case "ReportOutputType": return true;
+		    case "StorageType": return true;
+			default: throw new Exception("Unknown type '" + type + "' found in configuration file.");
+		}
+	}
+ #>
+

@@ -1,0 +1,7 @@
+﻿MyGet.org:
+username: clr1234
+password: emp-cr01
+
+nuget spec "Fundamental Building Blocks.csproj"   ==> Will result in "Fundamental Building Blocks.nuspec"
+
+nuget pack "Fundamental Building Blocks.csproj" -Prop Configuration=Release  ==> Will result in the "FundamentalBuildingBlocks.1.1.x.x.nupkg" depending on version number in AssemblyInfo.cs and in the "Fundamental Building Blocks.nuspec".

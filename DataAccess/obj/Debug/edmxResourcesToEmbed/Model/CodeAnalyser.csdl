@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CodeAnalyser" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="CodeAnalyzerContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LanguageDeclaration" EntityType="CodeAnalyser.LanguageDeclaration" />
+    <EntitySet Name="CategoryDeclaration" EntityType="CodeAnalyser.CategoryDeclaration" />
+    <EntitySet Name="RuleDeclaration" EntityType="CodeAnalyser.RuleDeclaration" />
+    <AssociationSet Name="CategoryDeclarationRuleDeclaration" Association="CodeAnalyser.CategoryDeclarationRuleDeclaration">
+      <End Role="CategoryDeclaration" EntitySet="CategoryDeclaration" />
+      <End Role="RuleDeclaration" EntitySet="RuleDeclaration" />
+    </AssociationSet>
+    <AssociationSet Name="LanguageDeclarationRuleDeclaration" Association="CodeAnalyser.LanguageDeclarationRuleDeclaration">
+      <End Role="LanguageDeclaration" EntitySet="LanguageDeclaration" />
+      <End Role="RuleDeclaration" EntitySet="RuleDeclaration" />
+    </AssociationSet>
+    <EntitySet Name="CategoryDefinition" EntityType="CodeAnalyser.CategoryDefinition" />
+    <EntitySet Name="ProjectDefinition" EntityType="CodeAnalyser.ProjectDefinition" />
+    <EntitySet Name="RuleDefinition" EntityType="CodeAnalyser.RuleDefinition" />
+    <AssociationSet Name="ProjectDefinitionCategoryDefinition" Association="CodeAnalyser.ProjectDefinitionCategoryDefinition">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="CategoryDefinition" EntitySet="CategoryDefinition" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryDefinitionRuleDefinition" Association="CodeAnalyser.CategoryDefinitionRuleDefinition">
+      <End Role="CategoryDefinition" EntitySet="CategoryDefinition" />
+      <End Role="RuleDefinition" EntitySet="RuleDefinition" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryDefinitionCategoryDeclaration" Association="CodeAnalyser.CategoryDefinitionCategoryDeclaration">
+      <End Role="CategoryDefinition" EntitySet="CategoryDefinition" />
+      <End Role="CategoryDeclaration" EntitySet="CategoryDeclaration" />
+    </AssociationSet>
+    <AssociationSet Name="RuleDeclarationRuleDefinition" Association="CodeAnalyser.RuleDeclarationRuleDefinition">
+      <End Role="RuleDeclaration" EntitySet="RuleDeclaration" />
+      <End Role="RuleDefinition" EntitySet="RuleDefinition" />
+    </AssociationSet>
+    <EntitySet Name="File" EntityType="CodeAnalyser.File" />
+    <EntitySet Name="Directory" EntityType="CodeAnalyser.Directory" />
+    <AssociationSet Name="ProjectDefinitionDirectoryDefinition" Association="CodeAnalyser.ProjectDefinitionDirectoryDefinition">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="DirectoryDefinition" EntitySet="Directory" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectDefinitionFileDefinition" Association="CodeAnalyser.ProjectDefinitionFileDefinition">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="FileDefinition" EntitySet="File" />
+    </AssociationSet>
+    <EntitySet Name="User" EntityType="CodeAnalyser.User" />
+    <EntitySet Name="UserRole" EntityType="CodeAnalyser.UserRole" />
+    <AssociationSet Name="UserUserRole" Association="CodeAnalyser.UserUserRole">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="UserProjectDefinition" Association="CodeAnalyser.UserProjectDefinition">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+    </AssociationSet>
+    <AssociationSet Name="UserProjectDefinition1" Association="CodeAnalyser.UserProjectDefinition1">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+    </AssociationSet>
+    <AssociationSet Name="UserProjectDefinition2" Association="CodeAnalyser.UserProjectDefinition2">
+      <End Role="User" EntitySet="User" />
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+    </AssociationSet>
+    <EntitySet Name="Version" EntityType="CodeAnalyser.Version" />
+    <EntitySet Name="Match" EntityType="CodeAnalyser.Match" />
+    <EntitySet Name="Batch" EntityType="CodeAnalyser.Batch" />
+    <AssociationSet Name="MatchBatch" Association="CodeAnalyser.MatchBatch">
+      <End Role="Match" EntitySet="Match" />
+      <End Role="Batch" EntitySet="Batch" />
+    </AssociationSet>
+    <EntitySet Name="ExcludedDirectory" EntityType="CodeAnalyser.ExcludedDirectory" />
+    <AssociationSet Name="ProjectDefinitionExcludedDirectory" Association="CodeAnalyser.ProjectDefinitionExcludedDirectory">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="ExcludedDirectory" EntitySet="ExcludedDirectory" />
+    </AssociationSet>
+    <EntitySet Name="ExcludedFile" EntityType="CodeAnalyser.ExcludedFile" />
+    <AssociationSet Name="ProjectDefinitionExcludedFile" Association="CodeAnalyser.ProjectDefinitionExcludedFile">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="ExcludedFile" EntitySet="ExcludedFile" />
+    </AssociationSet>
+    <AssociationSet Name="RuleDeclarationMatch" Association="CodeAnalyser.RuleDeclarationMatch">
+      <End Role="RuleDeclaration" EntitySet="RuleDeclaration" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="ProjectDefinitionMatch" Association="CodeAnalyser.ProjectDefinitionMatch">
+      <End Role="ProjectDefinition" EntitySet="ProjectDefinition" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="RuleDefinitionMatch" Association="CodeAnalyser.RuleDefinitionMatch">
+      <End Role="RuleDefinition" EntitySet="RuleDefinition" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryDefinitionMatch" Association="CodeAnalyser.CategoryDefinitionMatch">
+      <End Role="CategoryDefinition" EntitySet="CategoryDefinition" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="LanguageDeclaration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Extension" Type="String" Nullable="false" />
+    <NavigationProperty Name="Rules" Relationship="CodeAnalyser.LanguageDeclarationRuleDeclaration" FromRole="LanguageDeclaration" ToRole="RuleDeclaration" />
+  </EntityType>
+  <EntityType Name="CategoryDeclaration">
+    <Documentation>
+      <Summary>A category declaration encapsulates rule declaration(s).</Summary>
+      <LongDescription>The purpose of a category declaration is to group rule declarations in categories in order to ensure a better overview of all the rules declared.</LongDescription>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max">
+      <Documentation>
+        <Summary>Category declaration name.</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="Description" Type="String" Nullable="false" />
+    <NavigationProperty Name="Rules" Relationship="CodeAnalyser.CategoryDeclarationRuleDeclaration" FromRole="CategoryDeclaration" ToRole="RuleDeclaration" />
+    <NavigationProperty Name="CategoryDefinitions" Relationship="CodeAnalyser.CategoryDefinitionCategoryDeclaration" FromRole="CategoryDeclaration" ToRole="CategoryDefinition" />
+  </EntityType>
+  <EntityType Name="RuleDeclaration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="CategoryDeclaration" Relationship="CodeAnalyser.CategoryDeclarationRuleDeclaration" FromRole="RuleDeclaration" ToRole="CategoryDeclaration" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <NavigationProperty Name="LanguageDeclaration" Relationship="CodeAnalyser.LanguageDeclarationRuleDeclaration" FromRole="RuleDeclaration" ToRole="LanguageDeclaration" />
+    <NavigationProperty Name="RuleDefinition" Relationship="CodeAnalyser.RuleDeclarationRuleDefinition" FromRole="RuleDeclaration" ToRole="RuleDefinition" />
+    <Property Name="Severity" Type="Int32" Nullable="false" />
+    <Property Name="Expression" Type="String" Nullable="false" />
+    <NavigationProperty Name="Match" Relationship="CodeAnalyser.RuleDeclarationMatch" FromRole="RuleDeclaration" ToRole="Match" />
+  </EntityType>
+  <Association Name="CategoryDeclarationRuleDeclaration">
+    <End Type="CodeAnalyser.CategoryDeclaration" Role="CategoryDeclaration" Multiplicity="1" />
+    <End Type="CodeAnalyser.RuleDeclaration" Role="RuleDeclaration" Multiplicity="*" />
+  </Association>
+  <Association Name="LanguageDeclarationRuleDeclaration">
+    <End Type="CodeAnalyser.LanguageDeclaration" Role="LanguageDeclaration" Multiplicity="*" />
+    <End Type="CodeAnalyser.RuleDeclaration" Role="RuleDeclaration" Multiplicity="*" />
+  </Association>
+  <EntityType Name="CategoryDefinition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionCategoryDefinition" FromRole="CategoryDefinition" ToRole="ProjectDefinition" />
+    <NavigationProperty Name="RuleDefinitions" Relationship="CodeAnalyser.CategoryDefinitionRuleDefinition" FromRole="CategoryDefinition" ToRole="RuleDefinition" />
+    <NavigationProperty Name="CategoryDeclaration" Relationship="CodeAnalyser.CategoryDefinitionCategoryDeclaration" FromRole="CategoryDefinition" ToRole="CategoryDeclaration" />
+    <NavigationProperty Name="Match" Relationship="CodeAnalyser.CategoryDefinitionMatch" FromRole="CategoryDefinition" ToRole="Match" />
+  </EntityType>
+  <EntityType Name="ProjectDefinition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <NavigationProperty Name="CategoryDefinitions" Relationship="CodeAnalyser.ProjectDefinitionCategoryDefinition" FromRole="ProjectDefinition" ToRole="CategoryDefinition" />
+    <NavigationProperty Name="Directories" Relationship="CodeAnalyser.ProjectDefinitionDirectoryDefinition" FromRole="ProjectDefinition" ToRole="DirectoryDefinition" />
+    <NavigationProperty Name="ExcludedDirectories" Relationship="CodeAnalyser.ProjectDefinitionExcludedDirectory" FromRole="ProjectDefinition" ToRole="ExcludedDirectory" />
+    <NavigationProperty Name="Files" Relationship="CodeAnalyser.ProjectDefinitionFileDefinition" FromRole="ProjectDefinition" ToRole="FileDefinition" />
+    <NavigationProperty Name="ExcludedFiles" Relationship="CodeAnalyser.ProjectDefinitionExcludedFile" FromRole="ProjectDefinition" ToRole="ExcludedFile" />
+    <NavigationProperty Name="Owner" Relationship="CodeAnalyser.UserProjectDefinition" FromRole="ProjectDefinition" ToRole="User" />
+    <NavigationProperty Name="Contributers" Relationship="CodeAnalyser.UserProjectDefinition1" FromRole="ProjectDefinition" ToRole="User" />
+    <NavigationProperty Name="Followers" Relationship="CodeAnalyser.UserProjectDefinition2" FromRole="ProjectDefinition" ToRole="User" />
+    <NavigationProperty Name="Match" Relationship="CodeAnalyser.ProjectDefinitionMatch" FromRole="ProjectDefinition" ToRole="Match" />
+  </EntityType>
+  <EntityType Name="RuleDefinition">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="CategoryDefinition" Relationship="CodeAnalyser.CategoryDefinitionRuleDefinition" FromRole="RuleDefinition" ToRole="CategoryDefinition" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="RuleDeclaration" Relationship="CodeAnalyser.RuleDeclarationRuleDefinition" FromRole="RuleDefinition" ToRole="RuleDeclaration" />
+    <NavigationProperty Name="Match" Relationship="CodeAnalyser.RuleDefinitionMatch" FromRole="RuleDefinition" ToRole="Match" />
+  </EntityType>
+  <Association Name="ProjectDefinitionCategoryDefinition">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.CategoryDefinition" Role="CategoryDefinition" Multiplicity="*" />
+  </Association>
+  <Association Name="CategoryDefinitionRuleDefinition">
+    <End Type="CodeAnalyser.CategoryDefinition" Role="CategoryDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.RuleDefinition" Role="RuleDefinition" Multiplicity="*" />
+  </Association>
+  <Association Name="CategoryDefinitionCategoryDeclaration">
+    <End Type="CodeAnalyser.CategoryDefinition" Role="CategoryDefinition" Multiplicity="*" />
+    <End Type="CodeAnalyser.CategoryDeclaration" Role="CategoryDeclaration" Multiplicity="1" />
+  </Association>
+  <Association Name="RuleDeclarationRuleDefinition">
+    <End Type="CodeAnalyser.RuleDeclaration" Role="RuleDeclaration" Multiplicity="1" />
+    <End Type="CodeAnalyser.RuleDefinition" Role="RuleDefinition" Multiplicity="*" />
+  </Association>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionFileDefinition" FromRole="FileDefinition" ToRole="ProjectDefinition" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Directory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionDirectoryDefinition" FromRole="DirectoryDefinition" ToRole="ProjectDefinition" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="ProjectDefinitionDirectoryDefinition">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.Directory" Role="DirectoryDefinition" Multiplicity="*" />
+  </Association>
+  <Association Name="ProjectDefinitionFileDefinition">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.File" Role="FileDefinition" Multiplicity="*" />
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" />
+    <Property Name="MiddleName" Type="String" Nullable="false" />
+    <Property Name="LastName" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <NavigationProperty Name="UserRole" Relationship="CodeAnalyser.UserUserRole" FromRole="User" ToRole="UserRole" />
+    <NavigationProperty Name="MyProjects" Relationship="CodeAnalyser.UserProjectDefinition" FromRole="User" ToRole="ProjectDefinition" />
+    <NavigationProperty Name="MyContributionProjects" Relationship="CodeAnalyser.UserProjectDefinition1" FromRole="User" ToRole="ProjectDefinition" />
+    <NavigationProperty Name="MyReadOnlyProjects" Relationship="CodeAnalyser.UserProjectDefinition2" FromRole="User" ToRole="ProjectDefinition" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="User" Relationship="CodeAnalyser.UserUserRole" FromRole="UserRole" ToRole="User" />
+    <Property Name="Type" Type="Int32" Nullable="false">
+      <Documentation>
+        <Summary>Normal user or Administrator</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <Association Name="UserUserRole">
+    <End Type="CodeAnalyser.User" Role="User" Multiplicity="1" />
+    <End Type="CodeAnalyser.UserRole" Role="UserRole" Multiplicity="*" />
+  </Association>
+  <Association Name="UserProjectDefinition">
+    <End Type="CodeAnalyser.User" Role="User" Multiplicity="1" />
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="*" />
+  </Association>
+  <Association Name="UserProjectDefinition1">
+    <End Type="CodeAnalyser.User" Role="User" Multiplicity="1" />
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="*" />
+  </Association>
+  <Association Name="UserProjectDefinition2">
+    <End Type="CodeAnalyser.User" Role="User" Multiplicity="1" />
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Version">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VersionNumber" Type="String" Nullable="false" DefaultValue="" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Batch" Relationship="CodeAnalyser.MatchBatch" FromRole="Match" ToRole="Batch" />
+    <Property Name="LineNumber" Type="Int32" Nullable="false" />
+    <Property Name="CodeExtract" Type="String" Nullable="false" />
+    <Property Name="RootDirectoryPath" Type="String" Nullable="false" />
+    <Property Name="Filename" Type="String" Nullable="false" />
+    <NavigationProperty Name="RuleDeclaration" Relationship="CodeAnalyser.RuleDeclarationMatch" FromRole="Match" ToRole="RuleDeclaration" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionMatch" FromRole="Match" ToRole="ProjectDefinition" />
+    <NavigationProperty Name="RuleDefinition" Relationship="CodeAnalyser.RuleDefinitionMatch" FromRole="Match" ToRole="RuleDefinition" />
+    <NavigationProperty Name="CategoryDefinition" Relationship="CodeAnalyser.CategoryDefinitionMatch" FromRole="Match" ToRole="CategoryDefinition" />
+  </EntityType>
+  <EntityType Name="Batch">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Match" Relationship="CodeAnalyser.MatchBatch" FromRole="Batch" ToRole="Match" />
+  </EntityType>
+  <Association Name="MatchBatch">
+    <End Type="CodeAnalyser.Match" Role="Match" Multiplicity="*" />
+    <End Type="CodeAnalyser.Batch" Role="Batch" Multiplicity="1" />
+  </Association>
+  <EntityType Name="ExcludedDirectory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionExcludedDirectory" FromRole="ExcludedDirectory" ToRole="ProjectDefinition" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="ProjectDefinitionExcludedDirectory">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.ExcludedDirectory" Role="ExcludedDirectory" Multiplicity="*" />
+  </Association>
+  <EntityType Name="ExcludedFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ProjectDefinition" Relationship="CodeAnalyser.ProjectDefinitionExcludedFile" FromRole="ExcludedFile" ToRole="ProjectDefinition" />
+    <Property Name="Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Path" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="ProjectDefinitionExcludedFile">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.ExcludedFile" Role="ExcludedFile" Multiplicity="*" />
+  </Association>
+  <Association Name="RuleDeclarationMatch">
+    <End Type="CodeAnalyser.RuleDeclaration" Role="RuleDeclaration" Multiplicity="1" />
+    <End Type="CodeAnalyser.Match" Role="Match" Multiplicity="*" />
+  </Association>
+  <Association Name="ProjectDefinitionMatch">
+    <End Type="CodeAnalyser.ProjectDefinition" Role="ProjectDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.Match" Role="Match" Multiplicity="*" />
+  </Association>
+  <Association Name="RuleDefinitionMatch">
+    <End Type="CodeAnalyser.RuleDefinition" Role="RuleDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.Match" Role="Match" Multiplicity="*" />
+  </Association>
+  <Association Name="CategoryDefinitionMatch">
+    <End Type="CodeAnalyser.CategoryDefinition" Role="CategoryDefinition" Multiplicity="1" />
+    <End Type="CodeAnalyser.Match" Role="Match" Multiplicity="*" />
+  </Association>
+</Schema>

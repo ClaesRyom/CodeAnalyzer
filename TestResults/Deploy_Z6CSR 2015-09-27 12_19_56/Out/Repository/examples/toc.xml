@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='xslt/toc.xslt'?>
+<Toc>
+  <TotalCategories>
+
+    <Category Id="1" Name="Test name">
+    	<Count>123</Count>
+    	<Description>This is a test description...</Description>
+    	<Filename>XmlReport.xml</Filename>
+      <Severity Value="1">Fatal</Severity>
+    </Category>
+
+    <Category Id="2" Name="Test name 2">
+      <Count>123</Count>
+      <Description>This is a test description...</Description>
+      <Filename>XmlReport.xml</Filename>
+      <Severity Value="3">Warning</Severity>
+    </Category>
+
+  </TotalCategories>
+  
+</Toc>

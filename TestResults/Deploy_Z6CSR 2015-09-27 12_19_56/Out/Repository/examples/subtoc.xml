@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='xslt/subtoc.xslt'?>
+<Rules>
+
+  <Rule Id="1">
+    <Count>123</Count>
+    <Enabled>true</Enabled>
+    <Name>Finds classes</Name>
+    <Description>Finds all the class definitions.</Description>
+    <Severity>Critical</Severity>
+    <Expression>\s*public\s*class\s*</Expression>
+    <Link>SomeFile.xml</Link>
+  </Rule>
+
+  <Rule Id="2">
+    <Count>123</Count>
+    <Enabled>true</Enabled>
+    <Name>Finds interfaces</Name>
+    <Description>Finds all the interface definitions.</Description>
+    <Severity>Info</Severity>
+    <Expression>\s*public\s*interface\s*</Expression>
+    <Link>AnotherFile.xml</Link>
+  </Rule>
+
+</Rules>

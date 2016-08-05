@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='xslt/matches.xslt'?>
+<Matches>
+  
+  <Summary>
+    <Count>123</Count>
+    <Name><![CDATA[Finds interfaces]]></Name>
+    <Description><![CDATA[Finds all the interface definitions.]]></Description>
+  </Summary>
+
+  
+  <Match Id="1" Name="c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ESBSystemExceptionTest.cs" Open="false">
+    <File>c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ESBSystemExceptionTest.cs</File>
+    <LineNumber>15</LineNumber>
+    <RegExpName><![CDATA[Finds classes]]></RegExpName>
+    <RegExpDescription><![CDATA[Finds all the class definitions.]]></RegExpDescription>
+    <RegExpExpression><![CDATA[\s*public\s*class\s*]]></RegExpExpression>
+    <RegExpSummary><![CDATA[
+  public class ]]></RegExpSummary>
+    <Severity Value="2">Critical</Severity>
+  </Match>
+  
+  
+  <Match Id="2" Name="c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ExceptionMessageTest.cs" Open="false">
+    <File>c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ExceptionMessageTest.cs</File>
+    <LineNumber>15</LineNumber>
+    <RegExpName><![CDATA[Finds classes]]></RegExpName>
+    <RegExpDescription><![CDATA[Finds all the class definitions.]]></RegExpDescription>
+    <RegExpExpression><![CDATA[\s*public\s*class\s*]]></RegExpExpression>
+    <RegExpSummary><![CDATA[
+  public class ]]></RegExpSummary>
+    <Severity Value="3">Warning</Severity>
+  </Match>
+  
+  
+  <Match Id="3" Name="c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ServiceHelperTest.cs" Open="false">
+    <File>c:\Traen\DevEnv\TFS_TAP\CAP DK\Components\ESB\SRC_2010\TAS.ServiceBus.UnitTest\ServiceHelperTest.cs</File>
+    <LineNumber>14</LineNumber>
+    <RegExpName><![CDATA[Finds classes]]></RegExpName>
+    <RegExpDescription><![CDATA[Finds all the class definitions.]]></RegExpDescription>
+    <RegExpExpression><![CDATA[\s*public\s*class\s*]]></RegExpExpression>
+    <RegExpSummary><![CDATA[
+  public class ]]></RegExpSummary>
+    <Severity Value="1">Fatal</Severity>
+  </Match>
+  
+</Matches>

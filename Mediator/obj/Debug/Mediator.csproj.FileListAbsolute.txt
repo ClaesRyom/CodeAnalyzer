@@ -1,0 +1,7 @@
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\obj\Debug\Mediator.csprojResolveAssemblyReference.cache
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\TFS\Tools\Code Analyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.pdb

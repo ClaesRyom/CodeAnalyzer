@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="dca39423-69e4-44b6-a881-4e56b7707b63" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" name="Common">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="2e5b86b4-9b7d-4b1f-8bb7-bac6a05cd877" direction="Forward">
+          <layerMoniker Id="e17e8176-3341-4c70-9f2d-68d2a93d373b" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="a4cfc513-7f22-4ae9-8a8c-76715ddc2f54" name="Common">
+          <ArtifactNode Label="Common" Category="CodeSchema_Project" Id="(Assembly=../Common/Common.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Common)" Label="Common.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" name="Mediator">
+      <references>
+        <reference Id="ea52622e-8bda-42dd-b69b-b183a34640ab" name="Mediator">
+          <ArtifactNode Label="Mediator" Category="CodeSchema_Project" Id="(Assembly=../Mediator/Mediator.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Mediator)" Label="Mediator.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="86a8e6cd-a7ee-419c-ad2a-7395cf78cc06" name="Engine">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9dc3e400-fc9f-4179-980c-01c8abba1ad6" direction="Forward">
+          <layerMoniker Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e487419f-8552-4a71-86bd-5e09c5612ac2" direction="Forward">
+          <layerMoniker Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="86ceea30-357e-4caa-ac88-9c24f4884543" name="Engine">
+          <ArtifactNode Label="Engine" Category="CodeSchema_Project" Id="(Assembly=../Engine/Engine.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Engine)" Label="Engine.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="ceb73367-5f8b-49ef-ac95-afae77354f45" name="Statistics">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="d98117b8-089d-4955-9437-41828018a573" direction="Forward">
+          <layerMoniker Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5a462f7a-380d-40db-96e7-92ec29e0f69e" direction="Forward">
+          <layerMoniker Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="b77842b8-b116-40e5-abdc-1aba44070aef" name="Statistics">
+          <ArtifactNode Label="Statistics" Category="CodeSchema_Project" Id="(Assembly=../Statistics/Statistics.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Statistics)" Label="Statistics.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="57b87b4f-2070-437a-bce7-80eeaa573844" name="Version">
+      <references>
+        <reference Id="98ebfe33-fa7d-4182-81fe-5f0a40fd2865" name="Version">
+          <ArtifactNode Label="Version" Category="CodeSchema_Project" Id="(Assembly=../Version/Version.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Version)" Label="Version.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="4235818b-e854-4f21-b753-504e9b970af3" name="Configuration">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="dad22264-7b96-4801-89b5-56c52880cd93" direction="Forward">
+          <layerMoniker Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="1f1c9c69-4127-42d2-b5be-97d6100538ed" direction="Forward">
+          <layerMoniker Id="57b87b4f-2070-437a-bce7-80eeaa573844" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="edcfb0e6-e4ae-4521-b5a4-a53a1d8ade1c" direction="Forward">
+          <layerMoniker Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="5f06f946-94cd-40f7-8368-087081f40506" name="Configuration">
+          <ArtifactNode Label="Configuration" Category="CodeSchema_Project" Id="(Assembly=../Configuration/Configuration.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Configuration)" Label="Configuration.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="e17e8176-3341-4c70-9f2d-68d2a93d373b" name="Libraries">
+      <references>
+        <reference Id="a5e22dd3-7f20-4b01-9ccf-8bec98d1e16b" name="Libraries">
+          <ArtifactNode Label="Libraries" Category="CodeSchema_Project" Id="(Assembly=../Libraries/Libraries.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Libraries)" Label="Libraries.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="264eccad-f37f-4401-85f4-ca88edd2dd29" name="ConsoleApp">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="8c718c0a-5dd1-48d5-8fbb-af0556ab6002" direction="Forward">
+          <layerMoniker Id="d162c35a-2abe-4a5e-b683-3933ed8c2a2f" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="a0a373ad-c0b9-4ea3-964d-8d60a605496f" name="ConsoleApp">
+          <ArtifactNode Label="ConsoleApp" Category="CodeSchema_Project" Id="(Assembly=../ConsoleApp/ConsoleApp.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=&quot;Code Analyser&quot;)" Label="Code Analyser.exe" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="d162c35a-2abe-4a5e-b683-3933ed8c2a2f" name="Coordination">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9e2ff722-5426-42ed-9502-7d511a2074cd" direction="Forward">
+          <layerMoniker Id="a297db61-8ab7-498d-af3a-7a175260de8b" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="93244f3f-6124-458f-a59b-82a2c8a36d05" direction="Forward">
+          <layerMoniker Id="86a8e6cd-a7ee-419c-ad2a-7395cf78cc06" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="f55038cf-13d7-4d31-86e0-eb0b0f3208b1" direction="Forward">
+          <layerMoniker Id="ceb73367-5f8b-49ef-ac95-afae77354f45" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="514061a1-7872-4e8e-b0d8-9305c6b6a0aa" direction="Forward">
+          <layerMoniker Id="4235818b-e854-4f21-b753-504e9b970af3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d6d2aea7-91d1-478d-9e95-49d567af37cc" direction="Forward">
+          <layerMoniker Id="57b87b4f-2070-437a-bce7-80eeaa573844" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="54294976-4f06-4f74-94aa-2a44c6f9b9c5" direction="Forward">
+          <layerMoniker Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="23f2959f-a140-46b2-9c88-ea1934c59005" direction="Forward">
+          <layerMoniker Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="154f7835-d8b3-4153-a597-fc2ced04005d" name="Coordination">
+          <ArtifactNode Label="Coordination" Category="CodeSchema_Project" Id="(Assembly=../Coordination/Coordination.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=ComponentManagement)" Label="ComponentManagement.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="a297db61-8ab7-498d-af3a-7a175260de8b" name="Output">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bdd9e8a3-d3f6-4a0d-b240-f00f96c572a2" direction="Forward">
+          <layerMoniker Id="e1c999f1-62c1-4593-82b2-3a2e890d841c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="daa221a8-9d95-4b07-928b-819a4798256a" direction="Forward">
+          <layerMoniker Id="b9197a0a-b7e6-47e5-b99f-8198d1b683c0" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="8c7632b8-6fba-4915-84f3-b90731c92d86" name="Output">
+          <ArtifactNode Label="Output" Category="CodeSchema_Project" Id="(Assembly=../Output/Output.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=Output)" Label="Output.dll" Category="CodeSchema_Assembly">
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

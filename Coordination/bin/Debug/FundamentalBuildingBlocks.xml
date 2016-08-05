@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FundamentalBuildingBlocks</name>
+    </assembly>
+    <members>
+        <member name="T:Fbb.Communication.CommunicationController">
+             <summary>
+             <para>
+             The CommunicationController is responsible for the communication framework, 
+             that is initializing the framework and act as the interface for the 
+             whole communication framework. 
+             </para>
+             <para>
+             The communication framework needs an <see cref="T:System.Net.IPEndPoint"/> to be able of 
+             sending and receiving packages.
+             </para>
+             </summary>
+             <remarks>
+             Note that it is not nesessary to instantiate
+             a new CommunicationController if either the IP address or port needs to be 
+             changed. Instead use the method <see cref="M:Fbb.Communication.CommunicationController.Stop"/> and thereafter the method 
+             <see cref="M:Fbb.Communication.CommunicationController.Start(System.Net.IPEndPoint)"/> with the new <see cref="T:System.Net.IPEndPoint"/> as argument.
+             </remarks>
+             <example><code>
+             public class SomeClass : ICommunicationListener
+             {
+               private ICommunication m_CommunicationController = null;
+            
+               public SomeClass(IPEndPoint endpoint)
+               {
+                 // Initialize the Communication Framework.
+                 m_CommunicationController = new CommunicationController();
+                 m_CommunicationController.AddCommunicationListener(this);
+                 m_CommunicationController.Start(endpoint);
+               }
+            
+               #region Interface ICommunicationListener implementations ...................
+               public void PackageReceived(IPackage package)
+               {
+                 // Do something with the package - packages received through this method 
+                 // are pr. definition received asynchronous.
+               }
+             
+               public void PackageReceived(IPackage package, IConnection connection)
+               {
+                 // Do something with the package - packages received through this method 
+                 // are pr. definition received synchronous.
+               }
+               #endregion ................ Interface ICommunicationListener implementations
+             
+               public void Stop()
+               {
+                 m_CommunicationController.Stop();
+               }
+             }
+             </code></example>
+            
+             <seealso cref="T:Fbb.Communication.Packages.IPackage"/>
+             <seealso cref="T:Fbb.Communication.Packages.Package"/>
+             <seealso cref="T:Fbb.Communication.Packages.Data.IData"/>
+             <seealso cref="T:Fbb.Communication.Packages.Data.Data"/>
+        </member>
+        <member name="M:Fbb.Communication.ICommunication.Send(Fbb.Communication.Packages.IPackage)">
+            <summary>
+            Send package to remote machine with this method.
+            
+            If no exception is thrown it is garantied that the package has been sent.
+            In case of package is sent asyncronous the return value will always be equal 
+            to null, in case of package sent syncronous the return value is a package of
+            type IPackage.
+            </summary>
+            <param name="package"></param>
+        </member>
+        <member name="M:Fbb.Communication.CommunicationController.#ctor">
+            <summary>
+            Default constructor for the CommunicationController.
+            </summary>
+        </member>
+        <member name="M:Fbb.Communication.CommunicationController.AddCommunicationListener(Fbb.Communication.ICommunicationListener)">
+            <summary>
+            Add a communication listener - the listener must implement the interface
+            <see cref="T:Fbb.Communication.ICommunicationListener"/>.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Fbb.Communication.CommunicationController.Send(Fbb.Communication.Packages.IPackage)">
+            <summary>
+            
+            </summary>
+            <param name="package"></param>
+            <returns></returns>
+            <inheritdoc/>
+        </member>
+        <member name="M:Fbb.Communication.ICommunicationListener.PackageReceived(Fbb.Communication.Packages.IPackage)">
+            <summary>
+            This is for async. communication.
+            </summary>
+            <param name="package">A package from remot machine.</param>
+        </member>
+        <member name="M:Fbb.Communication.ICommunicationListener.PackageReceived(Fbb.Communication.Packages.IPackage,Fbb.Communication.IConnection)">
+            <summary>
+            This is for sync. communication.
+            </summary>
+            <param name="package">A package from remot machine.</param>
+            <param name="connection">A socket connection to the remote machine.</param>
+        </member>
+        <member name="M:Fbb.Communication.Packages.IPackage.SwapToFromAddresses">
+            <summary>
+            Swaps the To and From ip addresses - smart for when one want´s to send an answer back to sender.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.ID">
+            <summary>
+            The property describes the package unique identification number.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.ConnectionType">
+            <summary>
+            Describes the type of communication to be used; SYNCHRONOUS or ASYNCHRONOUS. 
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.From">
+            <summary>
+            Defines from where the package was sent. 
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.To">
+            <summary>
+            Describes to where the package is to be sent.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.Created">
+            <summary>
+            Describes when the package was initially created.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.Modified">
+            <summary>
+            Describes when the package was last modified.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.Transmitted">
+            <summary>
+            Describes when the package was sent.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.Received">
+            <summary>
+            Describes when the package was received.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.IPackage.Data">
+            <summary>
+            The Data object represents the actual data within the package.
+            </summary>
+        </member>
+        <member name="M:Fbb.Communication.Packages.Package.SwapToFromAddresses">
+            <summary>
+            Swaps the To and From ip addresses - smart for when one want´s to send an answer back to sender.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.ID">
+            <summary>
+            The property describes the package unique identification number.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.ConnectionType">
+            <summary>
+            Describes the type of communication to be used; SYNCHRONOUS or ASYNCHRONOUS. 
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.From">
+            <summary>
+            Defines from where the package was sent. 
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.To">
+            <summary>
+            Describes to where the package is to be sent.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.Created">
+            <summary>
+            Describes when the package was initially created.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.Modified">
+            <summary>
+            Describes when the package was last modified.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.Transmitted">
+            <summary>
+            Describes when the package was sent.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.Received">
+            <summary>
+            Describes when the package was received.
+            </summary>
+        </member>
+        <member name="P:Fbb.Communication.Packages.Package.Data">
+            <summary>
+            The Data object represents the actual data within the package.
+            </summary>
+        </member>
+        <member name="M:Fbb.DataProvider.ProviderBase.Notify(System.Object)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Fbb.Exceptions.IOnlyHereForDocReasons">
+            <summary>
+            This interface only exist for documentation reasons - in C# it is not possible to document
+            namespaces that only consist of folders or empty namespaces. So in order to be able to 
+            document the namespace this dummy interface has to be present! :o)
+            </summary>
+        </member>
+        <member name="T:Fbb.Output.Factory.General.TargetOutputEventArgs">
+            <summary>
+            Class that contains the data for the target output event. 
+            Derives from System.EventArgs.
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.IOnlyHereForDocReasons">
+            <summary>
+            This interface only exist for documentation reasons - in C# it is not possible to document
+            namespaces that only consist of folders or empty namespaces. So in order to be able to 
+            document the namespace this dummy interface has to be present! :o)
+            </summary>
+        </member>
+        <member name="T:Fbb.Cache.Keys.StandardKey">
+            <summary>
+              Defines the StandardKey type.
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.InterceptKeys">
+            <summary>
+            Winapi Key interception helper class.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.InterceptKeys.VKCodeToString(System.UInt32,System.Boolean)">
+            <summary>
+            Convert vkcode to Unicode.
+            <remarks>isKeyDown is required for because of keyboard state inconsistencies!</remarks>
+            </summary>
+            <param name="VKCode">vkcode</param>
+            <param name="isKeyDown">Is the key down event?</param>
+            <returns>String representing single unicode character.</returns>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.InterceptKeys.KeyEvent">
+            <summary>
+            Key event
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.InterceptKeys.KeyEvent.WM_KEYDOWN">
+            <summary>
+            Key down
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.InterceptKeys.KeyEvent.WM_KEYUP">
+            <summary>
+            Key up
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.InterceptKeys.KeyEvent.WM_SYSKEYUP">
+            <summary>
+            System key up
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.InterceptKeys.KeyEvent.WM_SYSKEYDOWN">
+            <summary>
+            System key down
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.KeyboardListener">
+             <summary>
+             Listens keyboard globally.
+            
+             HOW TO USE THE CLASS "KeyboardListener":
+             ========================================
+             
+             public partial class App : Application 
+             { 
+                KeyboardListener KListener = new KeyboardListener(); 
+            
+                private void Application_Startup(object sender, StartupEventArgs e) 
+                { 
+                    KListener.KeyDown += new RawKeyEventHandler(KListener_KeyDown); 
+                } 
+             
+                void KListener_KeyDown(object sender, RawKeyEventArgs args) 
+                { 
+                    Console.WriteLine(args.Key.ToString()); 
+                } 
+             
+                private void Application_Exit(object sender, ExitEventArgs e) 
+                { 
+                    KListener.Dispose(); 
+                } 
+             } 
+             
+             ========================================
+             
+             <remarks>Uses WH_KEYBOARD_LL.</remarks>
+             </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.KeyboardListener.#ctor">
+            <summary>
+            Creates global keyboard listener.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.KeyboardListener.Finalize">
+            <summary>
+            Destroys global keyboard listener.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.KeyboardListener.hookId">
+            <summary>
+            Hook ID
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.KeyboardListener.LowLevelKeyboardProc(System.Int32,System.UIntPtr,System.IntPtr)">
+            <summary>
+            Actual callback hook.
+            
+            <remarks>Calls asynchronously the asyncCallback.</remarks>
+            </summary>
+            <param name="nCode"></param>
+            <param name="wParam"></param>
+            <param name="lParam"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.KeyboardListener.hookedKeyboardCallbackAsync">
+            <summary>
+            Event to be invoked asynchronously (BeginInvoke) each time key is pressed.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.KeyboardListener.hookedLowLevelKeyboardProc">
+            <summary>
+            Contains the hooked callback in runtime.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.KeyboardListener.KeyboardListener_KeyboardCallbackAsync(Fbb.Util.Keyboard.InterceptKeys.KeyEvent,System.Int32,System.String)">
+            <summary>
+            HookCallbackAsync procedure that calls accordingly the KeyDown or KeyUp events.
+            </summary>
+            <param name="keyEvent">Keyboard event</param>
+            <param name="vkCode">vkcode</param>
+            <param name="character">Character as string.</param>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.KeyboardListener.Dispose">
+            <summary>
+            Disposes the hook.
+            <remarks>This call is required as it calls the UnhookWindowsHookEx.</remarks>
+            </summary>
+        </member>
+        <member name="E:Fbb.Util.Keyboard.KeyboardListener.KeyDown">
+            <summary>
+            Fired when any of the keys is pressed down.
+            </summary>
+        </member>
+        <member name="E:Fbb.Util.Keyboard.KeyboardListener.KeyUp">
+            <summary>
+            Fired when any of the keys is released.
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.KeyboardListener.KeyboardCallbackAsync">
+            <summary>
+            Asynchronous callback hook.
+            </summary>
+            <param name="character">Character</param>
+            <param name="keyEvent">Keyboard event</param>
+            <param name="vkCode">vkcode</param>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.RawKeyEventArgs">
+            <summary>
+            Raw KeyEvent arguments.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.RawKeyEventArgs.Vkcode">
+            <summary>
+            vkcode of the key.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.RawKeyEventArgs.Key">
+            <summary>
+            WPF Key of the key.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.RawKeyEventArgs.IsSysKey">
+            <summary>
+            Is the hitted key system key.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Keyboard.RawKeyEventArgs.Character">
+            <summary>
+            Unicode character of key pressed.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.RawKeyEventArgs.ToString">
+            <summary>
+            Convert to string.
+            </summary>
+            <returns>Returns string representation of this key, if not possible empty string is returned.</returns>
+        </member>
+        <member name="M:Fbb.Util.Keyboard.RawKeyEventArgs.#ctor(System.Int32,System.Boolean,System.String)">
+            <summary>
+            Create raw keyevent arguments.
+            </summary>
+            <param name="vkcode"></param>
+            <param name="isSysKey"></param>
+            <param name="character">character</param>
+        </member>
+        <member name="T:Fbb.Util.Keyboard.RawKeyEventHandler">
+            <summary>
+            Raw keyevent handler.
+            </summary>
+            <param name="sender">sender</param>
+            <param name="args">raw keyevent arguments</param>
+        </member>
+        <member name="F:Fbb.Output.Definitions.Trace.VERYHIGH">
+            <summary>
+            Trace level is very high, meaning that erverything will be logged.
+            </summary>
+        </member>
+        <member name="F:Fbb.Output.Definitions.Trace.HIGH">
+            <summary>
+            Trace level is high, meaning that much will be logged but not 
+            nesessary everything.
+            </summary>
+        </member>
+        <member name="F:Fbb.Output.Definitions.Trace.NORMAL">
+            <summary>
+            Trace level is normal, meaning that this is the appropriate trace 
+            level unless you need log that is out of the ordinary.
+            </summary>
+        </member>
+        <member name="F:Fbb.Output.Definitions.Trace.LOW">
+            <summary>
+            Trace level is low, meaning not much will be logged.
+            </summary>
+        </member>
+        <member name="F:Fbb.Output.Definitions.Trace.VERYLOW">
+            <summary>
+            Trace level is very low, meaning that almost nothing will be logged.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Queue.AbstractQueue.m_ShouldIWait">
+            <summary>
+            Flag used to syncronize read and write processes that are using the 
+            queue resource.
+            </summary>
+        </member>
+        <member name="F:Fbb.Util.Queue.AbstractQueue.m_IsWriterWaiting">
+            <summary>
+            Flag used to syncronize read and write processes that are using the 
+            queue resource.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.get">
+            <summary>
+            This method is the only one that actually removes or deletes any elements 
+            from the queue.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.put(System.Object)">
+            <summary>
+            This method is the only one that actually adds elements to the queue.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.QueueSize">
+            <summary>
+            Returns the number of elements in the queue.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.AddQueueReadListener(Fbb.Util.Queue.IQueueListener)">
+            <summary>
+            Adds a read listener to the data queue.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.RemoveQueueReadListener(Fbb.Util.Queue.IQueueListener)">
+            <summary>
+            Removes the read listener from the internal read listener queue which 
+            equals pQueueListener.
+            </summary>
+            <param name="listener"></param>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.ReadData">
+            <summary>
+            Returns the first data element in the data queue. The returned element 
+            is actually deleted from the data queue.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Queue.AbstractQueue.WriteData(System.Object)">
+            <summary>
+            Returns true if element data was successfully added to the data queue else it returns false.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Fbb.Util.Queue.AbstractQueue.Queue">
+            <summary>
+            The method returns a reference to the classes internal data queue.
+            If data queue was not already created this method will create a new 
+            empty data queue.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Fbb.Util.Queue.AbstractQueue.ReadListeners" -->
+        <member name="P:Fbb.Util.Queue.AbstractQueue.WriteListeners">
+            <summary>
+            Returns the list of write listeners that is currently awaiting data queue 
+            changes in the form of data being read (data elements removed).
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.Statistics.ApplicationStatistics">
+            <summary>
+            The purpose of this statistics class is more or less related to debugging 
+            because it keeps track of the internal house keepings such as the amount
+            of threads alive, running targets etc.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementInternalQueueTargets">
+            <summary>
+            Increments the number of "running" Internal Queue targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementInternalQueueTargets">
+            <summary>
+            Decrements the number of "running" Internal Queue targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementConsoleTargets">
+            <summary>
+            Increments the number of "running" console targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementConsoleTargets">
+            <summary>
+            Decrements the number of "running" console targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementWinEventLogTargets">
+            <summary>
+            Increments the number of "running" windows event log targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementWinEventLogTargets">
+            <summary>
+            Decrements the number of "running" windows event log targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementLogTargets">
+            <summary>
+            Increments the number of "running" Log targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementLogTargets">
+            <summary>
+            Decrements the number of "running" Log targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementXmlTargets">
+            <summary>
+            Increments the number of "running" Xml targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementXmlTargets">
+            <summary>
+            Decrements the number of "running" Xml targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementTraceTargets">
+            <summary>
+            Increments the number of "running" Trace targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementTraceTargets">
+            <summary>
+            Decrements the number of "running" Trace targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementNetworkTargets">
+            <summary>
+            Increments the number of "running" Network targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementNetworkTargets">
+            <summary>
+            Decrements the number of "running" Network targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementEmailTargets">
+            <summary>
+            Increments the number of "running" Email targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementEmailTargets">
+            <summary>
+            Decrements the number of "running" Email targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementMsSqlDatabaseTargets">
+            <summary>
+            Increments the number of "running" MsSqlDatabase targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementMsSqlDatabaseTargets">
+            <summary>
+            Decrements the number of "running" MsSqlDatabase targets.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.IncrementThreadCount">
+            <summary>
+            Increments the number of threads alive - that is just the number not an actual thread.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.DecrementThreadCount">
+            <summary>
+            Decrements the number of threads alive - that is just the number not an actual thread.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Statistics.ApplicationStatistics.ToString">
+            <summary>
+            Returns a string with statistics - think of the returned string as a snapshot of the 
+            class ApplicationStatistics.
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.Instance">
+            <summary>
+            Singleton entry point.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.TotalTargets">
+            <summary>
+            Returns the total amount of created or running targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.InternalQueueTargets">
+            <summary>
+            Returns the number of "running" internal queue targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.ConsoleTargets">
+            <summary>
+            Returns the number of "running" console targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.WinEventLogTargets">
+            <summary>
+            Returns the number of "running" windows event log targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.LogTargets">
+            <summary>
+            Returns the number of "running" Log targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.XmlTargets">
+            <summary>
+            Returns the number of "running" Xml targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.TraceTargets">
+            <summary>
+            Returns the number of "running" Trace targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.NetworkTargets">
+            <summary>
+            Returns the number of "running" Network targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.EmailTargets">
+            <summary>
+            Returns the number of "running" Email targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.MsSqlDatabaseTargets">
+            <summary>
+            Returns the number of "running" MsSqlDatabase targets.
+            </summary>
+        </member>
+        <member name="P:Fbb.Util.Statistics.ApplicationStatistics.ThreadCount">
+            <summary>
+            Returns the number of threads alive.
+            </summary>
+        </member>
+        <member name="T:Fbb.Util.Streams.CompareStreams">
+            <summary>
+            Compare two streams.
+            </summary>
+        </member>
+        <member name="M:Fbb.Util.Streams.CompareStreams.AreStreamsEqual(System.IO.Stream,System.IO.Stream)">
+            <summary>
+            Compare stream s1 with stream s2.
+            </summary>
+            <param name="s1"></param>
+            <param name="s2"></param>
+            <returns>Returns 0 if streams are identical and -1 if streams are not of same length. If streams are of same length and content are different a the index of where the first differense occurred is returned.</returns>
+        </member>
+    </members>
+</doc>

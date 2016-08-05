@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="1e46190e-ead0-4348-9b2d-5247a4982ba7"
+  name="Configuration"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="5af29e3a-6156-4151-9da6-89a704c6f640"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyser.Mediator.Configuration"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="2fe6cb8d-5511-44c9-b37a-d13d32106297"
+        name="ICategoryDeclaration"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="cb988678-9ea7-4f38-865e-25048b885e4a"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2Fc:%2FCLR%2FTFSPreview%2FTools%2FCode Analyser%2FMediator%2Fbin%2FDebug%2FMediator.dll&quot; Namespace%3DCodeAnalyser.Mediator.Configuration Type%3DICategoryDeclaration"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="517ca7af-b58a-4f7f-a070-17503a2c5015"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="12cea6c5-f2cf-489f-9fae-bc5d975bc14e">
+                <propertyInstance
+                  Id="03f3fe7f-1771-449f-a3ab-32d8b802a72e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84405e88-007d-45d9-b106-c82e0499d532">
+                <propertyInstance
+                  Id="6b6ffd9c-fdfd-4ee6-bbc8-f5febf15185f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5740d8c9-cf93-4238-9bfd-dac828ea24ab">
+                <propertyInstance
+                  Id="dc4a50b6-1653-4bfc-8497-d82a9a823396"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="57c87d2d-2c05-4938-983b-51051f64bf76">
+                <propertyInstance
+                  Id="da609b67-82d7-4fe2-a4f7-8effd75082f0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="19466247-af81-4c68-b2e0-7196b873a7bb"
+        LastKnownName="Declarations"
+        LastKnownLocation="Package_1059.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="81a57a37-b2aa-4fda-8318-3d4b6e4e22bd"
+        LastKnownName="Definitions"
+        LastKnownLocation="Package1_1059.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b170e956-37f9-4e6c-8a27-95454a5c46f2"
+        name="IConfigurationProxy"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="7ac8a43a-7cce-47cc-bd78-0804178a3e84"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyser%2FMediator%2Fbin%2FDebug%2FMediator.dll&quot; Namespace%3DCodeAnalyser.Mediator.Configuration Type%3DIConfigurationProxy"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="5fe2ef0d-b0ef-4141-9552-3d01000a59be"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d507bc83-0377-4409-8e34-c5a243d196c2">
+                <propertyInstance
+                  Id="fbe43130-295f-4df2-9d8e-074319fc629d"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d55af4c3-d413-4d23-af2a-ecfe606b069b">
+                <propertyInstance
+                  Id="23e88ef3-583c-43e2-b491-46a52974bdd5"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="33aa4ce4-233a-45db-a417-988cb4b33c7d">
+                <propertyInstance
+                  Id="09dd1489-1b8b-45c8-aad3-49cc056fa146"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c4314cdb-b401-447f-9e21-69480bae9093">
+                <propertyInstance
+                  Id="7542c67e-63d7-414e-9c5d-497722ceb4a0"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

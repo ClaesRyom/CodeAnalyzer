@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CodeAnalyserStoreContainer" CdmEntityContainer="CodeAnalyzerContainer">
+    <EntitySetMapping Name="LanguageDeclaration">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.LanguageDeclaration)">
+        <MappingFragment StoreEntitySet="LanguageDeclaration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryDeclaration">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.CategoryDeclaration)">
+        <MappingFragment StoreEntitySet="CategoryDeclaration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleDeclaration">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.RuleDeclaration)">
+        <MappingFragment StoreEntitySet="RuleDeclaration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryDefinition">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.CategoryDefinition)">
+        <MappingFragment StoreEntitySet="CategoryDefinition">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectDefinition">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.ProjectDefinition)">
+        <MappingFragment StoreEntitySet="ProjectDefinition">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleDefinition">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.RuleDefinition)">
+        <MappingFragment StoreEntitySet="RuleDefinition">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="File">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.File)">
+        <MappingFragment StoreEntitySet="File">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Directory">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.Directory)">
+        <MappingFragment StoreEntitySet="Directory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRole">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.UserRole)">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Version">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.Version)">
+        <MappingFragment StoreEntitySet="Version">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VersionNumber" ColumnName="VersionNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Match">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.Match)">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+          <ScalarProperty Name="CodeExtract" ColumnName="CodeExtract" />
+          <ScalarProperty Name="RootDirectoryPath" ColumnName="RootDirectoryPath" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batch">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.Batch)">
+        <MappingFragment StoreEntitySet="Batch">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExcludedDirectory">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.ExcludedDirectory)">
+        <MappingFragment StoreEntitySet="ExcludedDirectory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExcludedFile">
+      <EntityTypeMapping TypeName="IsTypeOf(CodeAnalyser.ExcludedFile)">
+        <MappingFragment StoreEntitySet="ExcludedFile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CategoryDeclarationRuleDeclaration" TypeName="CodeAnalyser.CategoryDeclarationRuleDeclaration" StoreEntitySet="RuleDeclaration">
+      <EndProperty Name="CategoryDeclaration">
+        <ScalarProperty Name="Id" ColumnName="CategoryDeclaration_Id" />
+      </EndProperty>
+      <EndProperty Name="RuleDeclaration">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LanguageDeclarationRuleDeclaration" TypeName="CodeAnalyser.LanguageDeclarationRuleDeclaration" StoreEntitySet="LanguageDeclarationRuleDeclaration">
+      <EndProperty Name="LanguageDeclaration">
+        <ScalarProperty Name="Id" ColumnName="LanguageDeclaration_Id" />
+      </EndProperty>
+      <EndProperty Name="RuleDeclaration">
+        <ScalarProperty Name="Id" ColumnName="Rules_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectDefinitionCategoryDefinition" TypeName="CodeAnalyser.ProjectDefinitionCategoryDefinition" StoreEntitySet="CategoryDefinition">
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="ProjectDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="CategoryDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryDefinitionRuleDefinition" TypeName="CodeAnalyser.CategoryDefinitionRuleDefinition" StoreEntitySet="RuleDefinition">
+      <EndProperty Name="CategoryDefinition">
+        <ScalarProperty Name="Id" ColumnName="CategoryDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="RuleDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CategoryDefinitionCategoryDeclaration" TypeName="CodeAnalyser.CategoryDefinitionCategoryDeclaration" StoreEntitySet="CategoryDefinition">
+      <EndProperty Name="CategoryDeclaration">
+        <ScalarProperty Name="Id" ColumnName="CategoryDeclaration_Id" />
+      </EndProperty>
+      <EndProperty Name="CategoryDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RuleDeclarationRuleDefinition" TypeName="CodeAnalyser.RuleDeclarationRuleDefinition" StoreEntitySet="RuleDefinition">
+      <EndProperty Name="RuleDeclaration">
+        <ScalarProperty Name="Id" ColumnName="RuleDeclaration_Id" />
+      </EndProperty>
+      <EndProperty Name="RuleDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectDefinitionDirectoryDefinition" TypeName="CodeAnalyser.ProjectDefinitionDirectoryDefinition" StoreEntitySet="Directory">
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="ProjectDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="DirectoryDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectDefinitionFileDefinition" TypeName="CodeAnalyser.ProjectDefinitionFileDefinition" StoreEntitySet="File">
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="ProjectDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="FileDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserUserRole" TypeName="CodeAnalyser.UserUserRole" StoreEntitySet="UserRole">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="UserRole">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserProjectDefinition" TypeName="CodeAnalyser.UserProjectDefinition" StoreEntitySet="ProjectDefinition">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="Owner_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserProjectDefinition1" TypeName="CodeAnalyser.UserProjectDefinition1" StoreEntitySet="ProjectDefinition">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="Contributers_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserProjectDefinition2" TypeName="CodeAnalyser.UserProjectDefinition2" StoreEntitySet="ProjectDefinition">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="Followers_Id" />
+      </EndProperty>
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MatchBatch" TypeName="CodeAnalyser.MatchBatch" StoreEntitySet="Match">
+      <EndProperty Name="Batch">
+        <ScalarProperty Name="Id" ColumnName="Batch_Id" />
+      </EndProperty>
+      <EndProperty Name="Match">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectDefinitionExcludedDirectory" TypeName="CodeAnalyser.ProjectDefinitionExcludedDirectory" StoreEntitySet="ExcludedDirectory">
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="ProjectDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="ExcludedDirectory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProjectDefinitionExcludedFile" TypeName="CodeAnalyser.ProjectDefinitionExcludedFile" StoreEntitySet="ExcludedFile">
+      <EndProperty Name="ProjectDefinition">
+        <ScalarProperty Name="Id" ColumnName="ProjectDefinition_Id" />
+      </EndProperty>
+      <EndProperty Name="ExcludedFile">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RuleDeclarationMatch" TypeName="CodeAnalyser.RuleDeclarationMatch" StoreEntitySet="Match">
+      <EndProperty Name="RuleDeclaration">
+        <ScalarProperty Name="Id" ColumnName="RuleDeclaration_Id" />
+      </EndProperty>
+      <EndProperty Name="Match">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

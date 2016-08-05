@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<componentModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="7c7ce14f-6d4d-4790-bf79-a6b1d8676fd2" name="UMLComponentDiagram1" linkedPackageId="b87eea44-9649-4383-aaf0-585556bf438b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="78310e33-38ba-4d61-a0dc-12b7fe6541e1">
+      <profileInstance Id="151c4fa3-6c33-4a68-bc3a-c7c0e045c51a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b25b892c-fe61-4b1d-9541-8b65fd295b33">
+      <profileInstance Id="24c2439b-350b-44ac-9d52-f50f2b4896fc" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="9fe28b2d-4d43-4914-83cb-ff736564aa4e">
+      <profileInstance Id="71c5efec-d9f2-4d29-a03d-4393a48e79a2" name="CSharpProfile">
+        <elementDefinition Id="fae8f57d-e1af-4c18-83e0-73c72c89d460" />
+      </profileInstance>
+      <elementDefinition Id="5dd5a346-5360-4b24-b1c5-af95c74ee62d" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <componentModelHasComponents>
+      <component Id="214c942a-fcb7-4d67-8664-2eb57ab8bbd1" name="Configuration" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="28d1d768-75fb-4207-97e7-c16b3dd720fb" />
+        <ownedAttributesInternal>
+          <providedInterface Id="810298ba-11d9-4e9e-99fc-6724fdf4cf73" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="fe2dd7ee-816c-4f6e-ac66-e77d47727c34" />
+            <type_NamedElement>
+              <interfaceMoniker Id="795ab0b4-f9e6-4d39-911d-31d5dc9e55a7" LastKnownName="IConfigurationProxy" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="2e09df88-07ab-492f-89b3-e4820342ecb7" name="Coordination" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8beed6d8-0bfe-434f-a81e-20ffade6630f" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="4570b329-07f1-45aa-b9e8-a7a56b31dec5" name="Engine" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="73318d33-e939-43d4-9851-73402e88b292" />
+        <ownedAttributesInternal>
+          <providedInterface Id="34e282c3-d35f-468b-bbe6-398cb07a7ff5" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="c7c4175e-eabe-4ef1-8b76-6e3da18e3f8d" />
+            <type_NamedElement>
+              <interfaceMoniker Id="a4477592-a8e6-4ebc-9dda-73a3cf6dd090" LastKnownName="IEngineProxy" />
+            </type_NamedElement>
+          </providedInterface>
+          <requiredInterface Id="dd698225-fe83-4a3f-b985-badbba16a94a" name="Port2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="af810ab7-46b8-4693-bf5b-0b56f23b6c4b" />
+            <suppliersInternal>
+              <dependency Id="8787f20b-eed1-4709-ba04-22483a5f4ebe">
+                <providedInterfaceMoniker Id="810298ba-11d9-4e9e-99fc-6724fdf4cf73" LastKnownName="Port1" />
+                <elementDefinition Id="924d3c51-ee8b-4e9e-93ec-78302326aca1" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="108ed5e6-432c-4178-b026-f68a7e6406d2" LastKnownName="IConfigurationProxy" />
+            </type_NamedElement>
+          </requiredInterface>
+          <requiredInterface Id="e9cacec2-852b-4270-990d-aa9d9877140f" name="Port3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="10196434-b57f-4651-aae3-ebe3b34b7895" />
+            <suppliersInternal>
+              <dependency Id="0cfeb442-fdcc-4f8a-bccf-396e53b27ce0">
+                <providedInterfaceMoniker Id="07d56620-a8c1-487b-b868-0c1a8315c25a" LastKnownName="Port1" />
+                <elementDefinition Id="d7432751-5b6a-4ece-bb09-64ab789a183e" />
+              </dependency>
+            </suppliersInternal>
+            <type_NamedElement>
+              <interfaceMoniker Id="7fa9d568-4ba0-4ffa-8e76-04c91635ff55" LastKnownName="IStatisticsProxy" />
+            </type_NamedElement>
+          </requiredInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="1b6310bf-1fc2-48d2-820d-49c00b40b6f0" name="Mediator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f3f07949-c156-46cf-819c-4cb7b58be7df" />
+      </component>
+    </componentModelHasComponents>
+    <componentModelHasComponents>
+      <component Id="dd600f0d-5d21-4514-aa72-1fa42a820db6" name="Statistics" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0fe7fc50-c9ca-4597-a2ef-008144f07f32" />
+        <ownedAttributesInternal>
+          <providedInterface Id="07d56620-a8c1-487b-b868-0c1a8315c25a" name="Port1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isService="false" isBehavior="false">
+            <elementDefinition Id="a798594d-8bb0-41d7-8c88-3a7a9016fcf3" />
+            <type_NamedElement>
+              <interfaceMoniker Id="e938b8a6-31fe-4924-8f16-d9536dfbfcf7" LastKnownName="IStatisticsProxy" />
+            </type_NamedElement>
+          </providedInterface>
+        </ownedAttributesInternal>
+      </component>
+    </componentModelHasComponents>
+    <modelContainsNamedElements>
+      <Interface Id="795ab0b4-f9e6-4d39-911d-31d5dc9e55a7" name="IConfigurationProxy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="cf7e5b2e-23a4-4b06-959d-341252034c5d" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="e938b8a6-31fe-4924-8f16-d9536dfbfcf7" name="IStatisticsProxy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bde333b-acfc-4990-9e9c-a9ab4dfd6b41" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="a4477592-a8e6-4ebc-9dda-73a3cf6dd090" name="IEngineProxy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c05a8837-d943-4651-85eb-61f2bf00e5c0" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="108ed5e6-432c-4178-b026-f68a7e6406d2" name="IConfigurationProxy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f8a2e674-66ef-4b6a-868d-b53f3a9e4ac5" />
+      </Interface>
+    </modelContainsNamedElements>
+    <modelContainsNamedElements>
+      <Interface Id="7fa9d568-4ba0-4ffa-8e76-04c91635ff55" name="IStatisticsProxy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c13bfa96-7887-4c51-a1f4-6f146a944518" />
+      </Interface>
+    </modelContainsNamedElements>
+  </packagedElements>
+  <package Id="b87eea44-9649-4383-aaf0-585556bf438b" name="Design">
+    <elementDefinition Id="a079801e-7c70-4537-95b7-449229fb67a7" />
+  </package>
+</componentModel>

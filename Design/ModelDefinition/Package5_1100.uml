@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="da5d5612-63a7-4942-b8c7-a7319ac51d2a"
+  name="Proxies"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="a58be3f0-3a04-48ab-85d3-eff5368aa4a7"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyzer.Mediator.Proxies"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="b56c8314-6152-4062-8d42-8d4e8ffe7a6e"
+        name="IKeyConsumer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="a335f7b5-af72-4878-90d8-662b709f1f51"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyzer%2FMediator%2Fbin%2FDebug%2FCodeAnalyzer.Mediator.dll&quot; Namespace%3DCodeAnalyzer.Mediator.Proxies Type%3DIKeyConsumer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9cddf259-6f91-45bd-9a07-ea0e3bf9da62"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="14bbc17e-1b94-48bc-84e5-72b89aea651b">
+                <propertyInstance
+                  Id="9b7c5998-00dc-44fd-8760-ea2232b6e631"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cbf95c81-5341-492e-bc06-609008456e4d">
+                <propertyInstance
+                  Id="3971ec49-8580-4940-bd49-6c70de588b95"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0330829c-3470-4141-9e22-1cde07c5c06c">
+                <propertyInstance
+                  Id="dc21da87-0170-4257-bdd5-8bbcd95277b6"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68b34c7f-e9d1-4f21-8e21-98c54acceb25">
+                <propertyInstance
+                  Id="f328449f-8eb5-47e1-90dc-dfa2475fe956"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

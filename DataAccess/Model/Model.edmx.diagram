@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b5c1783b25004248ba6ae581c1556f3d" Name="Diagram1" ShowGrid="false" >
+        <EntityTypeShape EntityType="Model.Entity" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.Match" Width="1.5" PointX="0.5" PointY="5.625" />
+        <InheritanceConnector EntityType="Model.Match" />
+        <EntityTypeShape EntityType="Model.MatchStatus" Width="1.5" PointX="2.25" PointY="5.625" />
+        <InheritanceConnector EntityType="Model.MatchStatus" />
+        <EntityTypeShape EntityType="Model.Reference" Width="1.5" PointX="9.25" PointY="0.75" />
+        <InheritanceConnector EntityType="Model.Reference" />
+        <EntityTypeShape EntityType="Model.RuleDeclaration" Width="1.5" PointX="10.375" PointY="4" />
+        <InheritanceConnector EntityType="Model.RuleDeclaration" />
+        <EntityTypeShape EntityType="Model.LanguageDeclaration" Width="1.875" PointX="12.875" PointY="1.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

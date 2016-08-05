@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="ef52279b-6815-45d9-b8b3-2cf310e774cb"
+  name="Mediator"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="7feb202d-4b3a-4270-ac70-432c7304f673"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyser.Mediator"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="1e46190e-ead0-4348-9b2d-5247a4982ba7"
+        LastKnownName="Configuration"
+        LastKnownLocation="Package7_1408.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="be840ce4-0c89-4f58-a21b-419b2e7b5db6"
+        LastKnownName="Management"
+        LastKnownLocation="Package10_1408.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="799468df-9fb4-4772-b40a-3cc57c03a08a"
+        LastKnownName="Proxies"
+        LastKnownLocation="Package11_1408.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7f3f01d8-e34f-49a3-b27a-a9f6daab972c"
+        LastKnownName="Initialization"
+        LastKnownLocation="Package_1413.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5c6a46cd-42db-4cb3-80c5-824685297e1f"
+        LastKnownName="Keys"
+        LastKnownLocation="Package_1040.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="2ea77c13-74aa-48ff-acde-1a41311e8016"
+        name="ProxyHome"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="752b61fa-5f7f-46e3-80cf-beed3fd048dc"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyser%2FMediator%2Fbin%2FDebug%2FMediator.dll&quot; Namespace%3DCodeAnalyser.Mediator Type%3DProxyHome"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="7e282aa7-96b7-4842-b764-7cfe931be626"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="55be4904-d2c3-46a4-a9fb-30e2b436fc9b">
+                <propertyInstance
+                  Id="e6c86326-9f5d-4835-970a-fdb20dfb9c1b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9214d32c-8caf-451e-965d-db505df1c05a">
+                <propertyInstance
+                  Id="a2c35c8c-8285-40eb-90da-f3193ae59e7f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f49df608-4d75-4f32-9604-c2eb04caf752">
+                <propertyInstance
+                  Id="691ecf05-5d52-4fd3-abd3-9077427c9c5c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9706a466-627b-461f-8ca3-fd55f27965f9">
+                <propertyInstance
+                  Id="3ed81ad9-5df7-4439-898a-3e45c7363ce5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6f7163e4-dded-4f59-9c4e-941941b5a677">
+                <propertyInstance
+                  Id="78de8868-7ef9-4d46-9668-fcbd0bd04a6c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b32dedee-6169-458e-b043-aa571a14fab7"
+        LastKnownName="Managers"
+        LastKnownLocation="Package1_1058.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6a0242f1-19a5-487e-8a0e-92354af0e02b"
+  name="Initialization"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="c063c6fb-803e-45b0-9743-05b83b89e158"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyzer.Mediator.Initialization"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="44526cce-6f9b-4280-8f6a-8cb0ca375f4c"
+        name="IInitializer"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="b2a2078e-2a09-4aa6-9d0b-88585794c904"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyzer%2FMediator%2Fbin%2FDebug%2FCodeAnalyzer.Mediator.dll&quot; Namespace%3DCodeAnalyzer.Mediator.Initialization Type%3DIInitializer"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d2418e1c-90d6-4fac-8e07-707d7c55fe3e"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cdf20fb6-6177-4861-ac63-2dc640467a3b">
+                <propertyInstance
+                  Id="26d248fa-ffac-475a-90ce-a11e60813615"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c04db688-7e9f-4a68-ad85-9d5f03844ca3">
+                <propertyInstance
+                  Id="eff832c1-c647-4f0b-b8f0-64235944665a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6976354a-f0cf-4bff-bb43-78c1305d0cbf">
+                <propertyInstance
+                  Id="b87a9cb2-ad17-4cfd-af66-2513bf85a803"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5b7ca51f-2772-4a21-8328-56b38331dec6">
+                <propertyInstance
+                  Id="b93d7742-6c13-40b0-b727-8e71a54b541f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

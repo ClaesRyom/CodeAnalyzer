@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="Config">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Version" type="xsd:string" />
+        <xsd:element name="LanguageDeclarations">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="LanguageDeclaration">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Name" type="xsd:string" />
+                    <xsd:element name="Extension" type="xsd:string" />
+                  </xsd:sequence>
+                  <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="CategoryDeclarations">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="CategoryDeclaration">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Description" type="xsd:string" />
+                    <xsd:element name="RuleDeclarations">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" name="RuleDeclaration">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Description" type="xsd:string" />
+                                <xsd:element name="Severity" type="xsd:string" />
+                                <xsd:element name="Expression" type="xsd:string" />
+                                <xsd:element name="AppliesTo">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element maxOccurs="unbounded" name="Language">
+                                        <xsd:complexType>
+                                          <xsd:attribute name="RefName" type="xsd:string" use="required" />
+                                          <xsd:attribute name="RefId" type="xsd:unsignedByte" use="required" />
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="Name" type="xsd:string" use="required" />
+                              <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="Name" type="xsd:string" use="required" />
+                  <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ProjectDefinitions">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="ProjectDefinition">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Directories">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="Include">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="unbounded" name="Directory">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                                    <xsd:attribute name="Path" type="xsd:string" use="required" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Exclude">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="unbounded" name="Directory">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                                    <xsd:attribute name="Path" type="xsd:string" use="required" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Files">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="Include">
+                            <xsd:complexType mixed="true">
+                              <xsd:sequence minOccurs="0">
+                                <xsd:element maxOccurs="unbounded" name="File">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                                    <xsd:attribute name="Path" type="xsd:string" use="required" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="Exclude">
+                            <xsd:complexType mixed="true">
+                              <xsd:sequence minOccurs="0">
+                                <xsd:element maxOccurs="unbounded" name="File">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                                    <xsd:attribute name="Path" type="xsd:string" use="required" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="CategoryDefinitions">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element maxOccurs="unbounded" name="CategoryDefinition">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element maxOccurs="unbounded" name="RuleDefinition">
+                                  <xsd:complexType>
+                                    <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                                    <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                                    <xsd:attribute name="RefName" type="xsd:string" use="required" />
+                                    <xsd:attribute name="RefId" type="xsd:unsignedByte" use="required" />
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                              <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                              <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                              <xsd:attribute name="RefName" type="xsd:string" use="required" />
+                              <xsd:attribute name="RefId" type="xsd:unsignedByte" use="required" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="Enabled" type="xsd:boolean" use="required" />
+                  <xsd:attribute name="Name" type="xsd:string" use="required" />
+                  <xsd:attribute name="Id" type="xsd:unsignedByte" use="required" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>

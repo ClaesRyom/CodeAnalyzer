@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5c6a46cd-42db-4cb3-80c5-824685297e1f"
+  name="Keys"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="dc64dd36-73a8-45f4-ade6-0d060ae212b1"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DCodeAnalyser.Mediator.Keys"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="f7f5e497-322f-40a7-a769-f4d07e6e7917"
+        name="IKey"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="8ce2b907-980d-4e21-8ff1-c125d353a6b7"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyser%2FMediator%2Fbin%2FDebug%2FMediator.dll&quot; Namespace%3DCodeAnalyser.Mediator.Keys Type%3DIKey"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="88bb5b70-ba68-44c2-922a-b1189391a479"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8494d8fd-fe90-4cf1-96a4-60541e5e7ab5">
+                <propertyInstance
+                  Id="32353882-b821-4d4b-bd74-5aa2861cb123"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="684ab85c-6342-4704-ae04-b4e3a8352948">
+                <propertyInstance
+                  Id="7d96bb91-eab0-4921-92ce-8056e6d0700e"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="054ce460-4b4b-4a2d-9bf5-5b27619af222">
+                <propertyInstance
+                  Id="ebaea561-8445-4473-8d3d-3b3991b1dcb1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d4bfb94d-a1c5-4e68-af2d-0b057f38fea0">
+                <propertyInstance
+                  Id="ef0ba967-553c-4b2c-9a15-be3496a23583"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c2549b7a-4910-46d7-9dc3-3dea22809b74"
+        name="ComponentAccessKey"
+        isAbstract="false"
+        isLeaf="true"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="332ebbc2-8ff7-4a7d-ad2d-d16fbb8b95c0"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FCLR%2FTFSPreview%2FTools%2FCode Analyser%2FMediator%2Fbin%2FDebug%2FMediator.dll&quot; Namespace%3DCodeAnalyser.Mediator.Keys Type%3DComponentAccessKey"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1caf8282-541d-480c-92ad-30b866451f72"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="837e18a8-8d3a-4e57-89ed-110d13649ad4">
+                <propertyInstance
+                  Id="76dd3f80-8cf4-4815-a950-338f4353485e"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ca953a6c-ee24-4849-bbca-22bdcc193da8">
+                <propertyInstance
+                  Id="d6528629-3dd2-4a08-92d9-a014260c0f83"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e4cec4f6-fe09-49da-b45c-c391af1961d1">
+                <propertyInstance
+                  Id="feb95301-7f4f-4d6e-8a86-b26cfb4e8ff6"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dc1dbd7e-cbd9-463c-a7f8-c043bb1bf3b9">
+                <propertyInstance
+                  Id="e201bb18-4a92-47a9-a8b6-199707feeded"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c40afa87-616b-474a-846d-9b8bfe9206ca">
+                <propertyInstance
+                  Id="898b07b6-130e-449c-abfe-6817dd542dad"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
