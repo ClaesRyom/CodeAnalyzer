@@ -134,7 +134,6 @@
     <Content Include="Output\Config\ApplCfg.xml" />
     <Content Include="Output\Config\DefaultXsltFiles\FbbDefault.xslt" />
     <Content Include="Output\Config\DefaultXsltFiles\FbbStyleOne.xslt" />
-    <Content Include="TestingGit.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
