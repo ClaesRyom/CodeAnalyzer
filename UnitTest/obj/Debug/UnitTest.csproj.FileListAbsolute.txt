@@ -62,6 +62,7 @@ C:\CLR\TFS\Tools\Code Analyzer\UnitTest\bin\Debug\EPPlus.xml
 C:\CLR\TFS\Tools\Code Analyzer\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\UnitTest\obj\Debug\CodeAnalyzer.UnitTest.dll
 C:\CLR\TFS\Tools\Code Analyzer\UnitTest\obj\Debug\CodeAnalyzer.UnitTest.pdb
+C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\EntityFramework.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\Config\Log.config
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\Config\rules.config
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\Config\rules.xsd
@@ -101,7 +102,6 @@ C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\CodeAnalyzer.Engine.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\CodeAnalyzer.Libraries.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\CodeAnalyzer.Mediator.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\CodeAnalyzer.Statistics.dll
-C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\EntityFramework.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\EntityFramework.SqlServer.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\FundamentalBuildingBlocks.dll
 C:\CLR\GitHub\CodeAnalyzer\UnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

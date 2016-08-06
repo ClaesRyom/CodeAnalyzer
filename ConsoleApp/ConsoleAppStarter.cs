@@ -26,13 +26,13 @@ namespace CodeAnalyzer.ConsoleApp
   public class ConsoleAppStarter
   {
     #region Instance Variables .................................................
-    private        Zone _Log            = null;
+    private static Zone _Log            = null;
     private static bool _ConsoleEnabled = true;
     #endregion .............................................. Instance Variables
 
 
     #region Properties .........................................................
-    public Zone Log
+    public static Zone Log
     {
       get { return _Log ?? (_Log = Out.ZoneFactory(Ids.REGION_APP_STARTER, "ConsoleAppStarter")); }
     }
@@ -218,12 +218,14 @@ namespace CodeAnalyzer.ConsoleApp
       if (list != null  &&  list.Length > 0)
       {
         // TODO: Do not use the Console - use the log framework!!!
-        Console.WriteLine(s, list);
+        //Console.WriteLine(s, list);
+	      Log.Info(s, list);
         return;
       }
       // TODO: Do not use the Console - use the log framework!!!
-      Console.WriteLine(s);
+      //Console.WriteLine(s);
+	    Log.Info(s);
     }
-    #endregion .......................................................... Output
-  }
+		#endregion .......................................................... Output
+	}
 }

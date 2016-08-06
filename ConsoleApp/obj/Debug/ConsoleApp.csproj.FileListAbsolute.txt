@@ -133,6 +133,8 @@ C:\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.exe.manifest
 C:\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.application
 C:\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.exe
 C:\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.pdb
+C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\EntityFramework.xml
+C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\Config\Log.config
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\Config\rules.config
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\Config\rules.xsd
@@ -186,7 +188,6 @@ C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Config.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Coordination.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Mediator.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Output.pdb
-C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\EntityFramework.xml
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.DataAccess.pdb
@@ -194,7 +195,6 @@ C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Statistics.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Engine.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\CodeAnalyzer.Matches.pdb
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\bin\Debug\EPPlus.xml
-C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.exe.manifest
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.application
 C:\CLR\GitHub\CodeAnalyzer\ConsoleApp\obj\Debug\CodeAnalyzer.Console.exe

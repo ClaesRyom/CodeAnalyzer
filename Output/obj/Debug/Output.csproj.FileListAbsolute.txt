@@ -79,6 +79,7 @@ C:\GitHub\CodeAnalyzer\Output\bin\Debug\FundamentalBuildingBlocks.xml
 C:\GitHub\CodeAnalyzer\Output\obj\Debug\Output.csprojResolveAssemblyReference.cache
 C:\GitHub\CodeAnalyzer\Output\obj\Debug\CodeAnalyzer.Output.dll
 C:\GitHub\CodeAnalyzer\Output\obj\Debug\CodeAnalyzer.Output.pdb
+C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\DocumentFormat.OpenXml.xml
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\Repository\css\common.css
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\Repository\examples\languagesdeclarations.xslt
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\Repository\examples\matches.xml
@@ -114,7 +115,6 @@ C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\FundamentalBuildingBlocks.dll
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\Yogesh.ExcelXml.dll
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\Yogesh.Extensions.dll
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\CodeAnalyzer.Mediator.pdb
-C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\DocumentFormat.OpenXml.xml
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\EPPlus.xml
 C:\CLR\GitHub\CodeAnalyzer\Output\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\Output\obj\Debug\Output.csprojResolveAssemblyReference.cache
