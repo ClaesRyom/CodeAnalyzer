@@ -352,6 +352,7 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 					continue;
 	      }
 
+
 	      string path = null;
 				if (tmpPath.StartsWith("*"))
 				{
