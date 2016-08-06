@@ -51,6 +51,7 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 
     #region Project Definition Constants .......................................
     private const string PROJECT_DEFINITION  = @"ProjectDefinition";
+    private const string PROJECT_ROOT_DIR    = @"RootDirectory";
     private const string PROJECT_DIRECTORIES = @"Directories";
     private const string PROJECT_FILES       = @"Files";
     private const string PROJECT_INCLUDE     = @"Include";
@@ -212,19 +213,26 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
           projectDefinition.Enabled = bool.Parse(projDefinition.Attribute(XName.Get(ENABLED)).Value); // XSD should have validated input...
           projectDefinition.Name = projDefinition.Attribute(XName.Get(NAME)).Value;
 
+					if (!projectDefinition.Enabled)
+						continue;
 
-          // Load the directories to "Include" and the directories to "Exclude"...
-          XElement includeDirs = projDefinition.Descendants(PROJECT_DIRECTORIES).Descendants(PROJECT_INCLUDE).First();
+					// Load the root directory...
+	        XElement rootDir = projDefinition.Descendants(PROJECT_ROOT_DIR).Descendants(PROJECT_DIRECTORY).First();
+	        projectDefinition.RootDirectory.Path = rootDir.LastAttribute.Value;
+
+
+					// Load the directories to "Include" and the directories to "Exclude"...
+					XElement includeDirs = projDefinition.Descendants(PROJECT_DIRECTORIES).Descendants(PROJECT_INCLUDE).First();
           XElement excludeDirs = projDefinition.Descendants(PROJECT_DIRECTORIES).Descendants(PROJECT_EXCLUDE).First();
-          projectDefinition.Directories.AddRange(LoadDirectoryDefinitions(includeDirs));
-          projectDefinition.ExcludedDirectories.AddRange(LoadDirectoryDefinitions(excludeDirs));
+          projectDefinition.Directories.AddRange(LoadDirectoryDefinitions(projectDefinition, includeDirs));
+          projectDefinition.ExcludedDirectories.AddRange(LoadDirectoryDefinitions(projectDefinition, excludeDirs));
 
 
           // Load the directories to "Include" and the directories to "Exclude"...
           XElement includeFiles = projDefinition.Descendants(PROJECT_FILES).Descendants(PROJECT_INCLUDE).First();
           XElement excludeFiles = projDefinition.Descendants(PROJECT_FILES).Descendants(PROJECT_EXCLUDE).First();
-          projectDefinition.Files.AddRange(LoadFileDefinitions(includeFiles));
-          projectDefinition.ExcludedFiles.AddRange(LoadFileDefinitions(excludeFiles));
+          projectDefinition.Files.AddRange(LoadFileDefinitions(projectDefinition, includeFiles));
+          projectDefinition.ExcludedFiles.AddRange(LoadFileDefinitions(projectDefinition, excludeFiles));
 
 
           // Load the category definitions...
@@ -331,7 +339,7 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 
 
     #region Definition Load Helpers
-    private List<DirectoryDefinition> LoadDirectoryDefinitions(XElement includeElement)
+    private List<DirectoryDefinition> LoadDirectoryDefinitions(ProjectDefinition projectDefinition, XElement includeElement)
     {
       List<DirectoryDefinition> list = new List<DirectoryDefinition>();
 
@@ -340,14 +348,33 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
         DirectoryDefinition directoryDefinition = new DirectoryDefinition();
 
         directoryDefinition.Enabled = bool.Parse(dir.Attribute(XName.Get(ENABLED)).Value); // XSD should have validated input...
-        directoryDefinition.Path = dir.Attribute(XName.Get(PROJECT_PATH)).Value;
 
-        list.Add(directoryDefinition);
+				string tmpPath = dir.Attribute(XName.Get(PROJECT_PATH)).Value;
+	      if (string.IsNullOrEmpty(tmpPath))
+	      {
+		      Log.Warning("Empty directory defined in project '" + projectDefinition.Name + "'.");
+					continue;
+	      }
+
+	      string path = null;
+				if (tmpPath.StartsWith("*"))
+				{
+					tmpPath = tmpPath.TrimStart('*');
+					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
+
+		      if (!Directory.Exists(path))
+		      {
+			      Log.Warning("Unable to find directory '" + path + "' in project '" + projectDefinition.Name + "'.");
+			      continue;
+		      }
+	      }
+	      directoryDefinition.Path = path;
+				list.Add(directoryDefinition);
       }
       return list;
     }
 
-    private List<FileDefinition> LoadFileDefinitions(XElement includeElement)
+    private List<FileDefinition> LoadFileDefinitions(ProjectDefinition projectDefinition, XElement includeElement)
     {
       List<FileDefinition> list = new List<FileDefinition>();
 
@@ -356,9 +383,28 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
         FileDefinition fileDefinition = new FileDefinition();
 
         fileDefinition.Enabled = bool.Parse(file.Attribute(XName.Get(ENABLED)).Value); // XSD should have validated input...
-        fileDefinition.Path = file.Attribute(XName.Get(PROJECT_PATH)).Value;
 
-        list.Add(fileDefinition);
+				string tmpPath = file.Attribute(XName.Get(PROJECT_PATH)).Value;
+				if (string.IsNullOrEmpty(tmpPath))
+				{
+					Log.Warning("Empty file defined in project '" + projectDefinition.Name + "'.");
+					continue;
+				}
+
+				string path = null;
+				if (tmpPath.StartsWith("*"))
+				{
+					tmpPath = tmpPath.TrimStart('*');
+					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
+
+					if (!File.Exists(path))
+		      {
+			      Log.Warning("Unable to find file '" + path + "' in project '" + projectDefinition.Name + "'.");
+			      continue;
+		      }
+	      }
+	      fileDefinition.Path = path;
+				list.Add(fileDefinition);
       }
       return list;
     }

@@ -14,3 +14,35 @@ C:\CLR\TFS\Tools\Code Analyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.xm
 C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.dll
 C:\CLR\TFS\Tools\Code Analyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.pdb
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll.config
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.pdb
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.dll
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.pdb
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.xml
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\GitHub\CodeAnalyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.xml
+C:\GitHub\CodeAnalyzer\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeAnalyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.dll
+C:\GitHub\CodeAnalyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.pdb
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll.config
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.DataAccess.pdb
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\CodeAnalyzer.Version.pdb
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.xml
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\bin\Debug\FundamentalBuildingBlocks.xml
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.dll
+C:\CLR\GitHub\CodeAnalyzer\DataAccess\obj\Debug\CodeAnalyzer.DataAccess.pdb
