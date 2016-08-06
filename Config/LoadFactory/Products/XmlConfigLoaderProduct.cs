@@ -213,9 +213,13 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
           projectDefinition.Enabled = bool.Parse(projDefinition.Attribute(XName.Get(ENABLED)).Value); // XSD should have validated input...
           projectDefinition.Name = projDefinition.Attribute(XName.Get(NAME)).Value;
 
+					if (!projectDefinition.Enabled)
+						continue;
+
 					// Load the root directory...
 	        XElement rootDir = projDefinition.Descendants(PROJECT_ROOT_DIR).Descendants(PROJECT_DIRECTORY).First();
-	        projectDefinition.RootDirectory.Path = rootDir.LastAttribute.ToString();
+	        projectDefinition.RootDirectory.Path = rootDir.LastAttribute.Value;
+
 
 					// Load the directories to "Include" and the directories to "Exclude"...
 					XElement includeDirs = projDefinition.Descendants(PROJECT_DIRECTORIES).Descendants(PROJECT_INCLUDE).First();
@@ -348,23 +352,19 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 				string tmpPath = dir.Attribute(XName.Get(PROJECT_PATH)).Value;
 	      if (string.IsNullOrEmpty(tmpPath))
 	      {
-		      Log.Warning("Empty directory defined in project '" + NAME + "'.");
+		      Log.Warning("Empty directory defined in project '" + projectDefinition.Name + "'.");
 					continue;
 	      }
-
 
 	      string path = null;
 				if (tmpPath.StartsWith("*"))
 				{
 					tmpPath = tmpPath.TrimStart('*');
-					if (string.IsNullOrEmpty(tmpPath))
-						path = projectDefinition.RootDirectory.Path;
-					else
-						path = Path.Combine(projectDefinition.RootDirectory.Path, tmpPath);
+					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
 
 		      if (!Directory.Exists(path))
 		      {
-			      Log.Warning("Unable to find directory '" + path + "' in project '" + NAME + "'.");
+			      Log.Warning("Unable to find directory '" + path + "' in project '" + projectDefinition.Name + "'.");
 			      continue;
 		      }
 	      }
@@ -387,18 +387,19 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 				string tmpPath = file.Attribute(XName.Get(PROJECT_PATH)).Value;
 				if (string.IsNullOrEmpty(tmpPath))
 				{
-					Log.Warning("Empty file defined in project '" + NAME + "'.");
+					Log.Warning("Empty file defined in project '" + projectDefinition.Name + "'.");
 					continue;
 				}
 
-	      string path = null;
-	      if (tmpPath.StartsWith("*"))
-	      {
+				string path = null;
+				if (tmpPath.StartsWith("*"))
+				{
 					tmpPath = tmpPath.TrimStart('*');
-					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.Combine(projectDefinition.RootDirectory.Path, tmpPath);
-					if (!Directory.Exists(path))
+					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
+
+					if (!File.Exists(path))
 		      {
-			      Log.Warning("Unable to find file '" + path + "' in project '" + NAME + "'.");
+			      Log.Warning("Unable to find file '" + path + "' in project '" + projectDefinition.Name + "'.");
 			      continue;
 		      }
 	      }
