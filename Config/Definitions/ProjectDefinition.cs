@@ -6,6 +6,10 @@
 //   without the authors specific written permission.
 // </copyright>
 // -----------------------------------------------------------------------------
+
+using System;
+using System.IO;
+
 namespace CodeAnalyzer.Config.Definitions
 {
 	using System.Collections.Generic;
@@ -18,12 +22,19 @@ namespace CodeAnalyzer.Config.Definitions
 
 	internal sealed class ProjectDefinition : IProjectDefinition
   {
-    #region Auto properties ....................................................
-    public int                                  Id                  { get; set; }
+		#region Instance variables .................................................
+		private IDirectoryDefinition _rootDirectory = null;
+		#endregion .............................................. Instance variables
+
+
+		#region Auto properties ....................................................
+		private bool                                UnderConstruction   { get; set; }
+
+		public int                                  Id                  { get; set; }
     public bool                                 Enabled             { get; set; }
     public string                               Name                { get; set; }
 
-    public List<IDirectoryDefinition>           Directories         { get; set; }
+		public List<IDirectoryDefinition>           Directories         { get; set; }
     public List<IDirectoryDefinition>           ExcludedDirectories { get; set; }
     public List<IDirectoryDefinition>           InvalidDirectories  { get; set; }
 
@@ -32,12 +43,44 @@ namespace CodeAnalyzer.Config.Definitions
     public List<IFileDefinition>                InvalidFiles        { get; set; }
 
     public Dictionary<int, ICategoryDefinition> Categories          { get; set; }
-    #endregion ................................................. Auto properties
+		#endregion ................................................. Auto properties
 
 
-    #region Construction .......................................................
-    public ProjectDefinition()
-    {
+		#region Properties .........................................................
+		public IDirectoryDefinition RootDirectory
+		{
+			get
+			{
+				return _rootDirectory;
+			}
+			set
+			{
+				if (!UnderConstruction)
+				{
+					if (Enabled)
+					{
+						if (value == null)
+							throw new ArgumentNullException(@"Root directory can not be null.");
+
+						if (!Directory.Exists(value.Path))
+							throw new ArgumentException("Root directory '" + value.Path + "' does not exist.");
+
+						_rootDirectory = value;
+						return;	
+					}
+				}
+				_rootDirectory = value;
+			}
+		}
+		#endregion ...................................................... Properties
+
+
+		#region Construction .......................................................
+		public ProjectDefinition()
+		{
+			UnderConstruction   = true;
+
+			RootDirectory       = new DirectoryDefinition();
       Directories         = new List<IDirectoryDefinition>();
       ExcludedDirectories = new List<IDirectoryDefinition>();
       InvalidDirectories  = new List<IDirectoryDefinition>();
@@ -47,7 +90,9 @@ namespace CodeAnalyzer.Config.Definitions
       InvalidFiles        = new List<IFileDefinition>();
 
       Categories          = new Dictionary<int, ICategoryDefinition>();
-    }
+
+			UnderConstruction   = false;
+		}
     #endregion .................................................... Construction
 
 

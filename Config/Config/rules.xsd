@@ -69,6 +69,17 @@
               <xsd:element maxOccurs="unbounded" name="ProjectDefinition">
                 <xsd:complexType>
                   <xsd:sequence>
+                    <xsd:element name="RootDirectory">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="Directory">
+                            <xsd:complexType>
+                              <xsd:attribute name="Path" type="xsd:string" use="required" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
                     <xsd:element name="Directories">
                       <xsd:complexType>
                         <xsd:sequence>

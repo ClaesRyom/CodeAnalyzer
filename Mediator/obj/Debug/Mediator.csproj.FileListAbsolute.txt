@@ -12,3 +12,9 @@ C:\CLR\GitHub\CodeAnalyzer\Mediator\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\Mediator\obj\Debug\Mediator.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.dll
 C:\CLR\GitHub\CodeAnalyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\Mediator\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\Mediator\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\Mediator\bin\Debug\FundamentalBuildingBlocks.dll
+C:\GitHub\CodeAnalyzer\Mediator\bin\Debug\FundamentalBuildingBlocks.xml
+C:\GitHub\CodeAnalyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\Mediator\obj\Debug\CodeAnalyzer.Mediator.pdb

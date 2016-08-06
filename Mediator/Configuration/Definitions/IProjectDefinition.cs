@@ -8,7 +8,6 @@
 // -----------------------------------------------------------------------------
 namespace CodeAnalyzer.Mediator.Configuration.Definitions
 {
-  using System;
   using System.Collections.Generic;
 
 
@@ -19,6 +18,7 @@ namespace CodeAnalyzer.Mediator.Configuration.Definitions
     string                               Name                { get; set; }
     int                                  Id                  { get; set; }
 
+		IDirectoryDefinition                 RootDirectory       { get; set; }
     List<IDirectoryDefinition>           Directories         { get; set; }
     List<IDirectoryDefinition>           ExcludedDirectories { get; set; }
     List<IDirectoryDefinition>           InvalidDirectories  { get; set; }
