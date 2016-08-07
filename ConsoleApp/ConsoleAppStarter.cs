@@ -6,10 +6,6 @@
 //   without the authors specific written permission.
 // </copyright>
 // -----------------------------------------------------------------------------
-
-using Fbb.Exceptions.Base;
-
-
 namespace CodeAnalyzer.ConsoleApp
 {
   using System;
@@ -17,7 +13,7 @@ namespace CodeAnalyzer.ConsoleApp
 
   using Coordination;
   using Fbb.Output;
-  using Fbb.Util.TimeTracking;
+	using Fbb.Exceptions.Base;
   using Mediator;
   using Mediator.Cryptography;
   using Mediator.Identifiers;
