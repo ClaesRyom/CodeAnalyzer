@@ -357,18 +357,22 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 	      }
 
 	      string path = null;
-				if (tmpPath.StartsWith("*"))
+	      if (!tmpPath.StartsWith("*"))
+	      {
+		      path = tmpPath;
+	      }
+				else
 				{
 					tmpPath = tmpPath.TrimStart('*');
 					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
-
-		      if (!Directory.Exists(path))
-		      {
-			      Log.Warning("Unable to find directory '" + path + "' in project '" + projectDefinition.Name + "'.");
-			      continue;
-		      }
 	      }
-	      directoryDefinition.Path = path;
+
+				if (!Directory.Exists(path))
+				{
+					Log.Warning("Unable to find directory '" + path + "' in project '" + projectDefinition.Name + "'.");
+					continue;
+				}
+				directoryDefinition.Path = path;
 				list.Add(directoryDefinition);
       }
       return list;
@@ -392,17 +396,21 @@ namespace CodeAnalyzer.Config.LoadFactory.Products
 				}
 
 				string path = null;
-				if (tmpPath.StartsWith("*"))
+	      if (!tmpPath.StartsWith("*"))
+	      {
+					path = tmpPath;
+				}
+				else
 				{
 					tmpPath = tmpPath.TrimStart('*');
 					path = string.IsNullOrEmpty(tmpPath) ? projectDefinition.RootDirectory.Path : Path.GetFullPath(projectDefinition.RootDirectory.Path + tmpPath);
-
-					if (!File.Exists(path))
-		      {
-			      Log.Warning("Unable to find file '" + path + "' in project '" + projectDefinition.Name + "'.");
-			      continue;
-		      }
 	      }
+
+				if (!File.Exists(path))
+				{
+					Log.Warning("Unable to find file '" + path + "' in project '" + projectDefinition.Name + "'.");
+					continue;
+				}
 	      fileDefinition.Path = path;
 				list.Add(fileDefinition);
       }

@@ -91,6 +91,7 @@
     <Compile Include="DataAccess\IMatchDataAccessProxy.cs" />
     <Compile Include="DataAccess\IVersionDataAccessProxy.cs" />
     <Compile Include="DirHandler.cs" />
+    <Compile Include="Engine\CodeExtractType.cs" />
     <Compile Include="Engine\IEngineProxy.cs" />
     <Compile Include="Engine\Summaries\ICategorySummary.cs" />
     <Compile Include="Exceptions\DataAccess\DataAccessComponentException.cs" />

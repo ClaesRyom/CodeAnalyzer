@@ -32,6 +32,7 @@ namespace CodeAnalyzer.Mediator
 
   using Configuration;
   using Exceptions.Configuration;
+  using Engine;
   using Output;
   
 
@@ -129,22 +130,23 @@ namespace CodeAnalyzer.Mediator
 	{
 		switch (type) 
 		{
-			case "bool":    return true;
-			case "byte":    return true;
-			case "sbyte":   return true;
-			case "char":    return true;
-			case "decimal": return true;
-			case "double":  return true;
-			case "float":   return true;
-			case "int":     return true;
-			case "uint":    return true;
-			case "long":    return true;
-			case "ulong":   return true;
-			case "short":   return true;
-			case "ushort":  return true;
-			case "string":  return true;
-		    case "ReportOutputType": return true;
-		    case "StorageType": return true;
+			case "bool":             return true;
+			case "byte":             return true;
+			case "sbyte":            return true;
+			case "char":             return true;
+			case "decimal":          return true;
+			case "double":           return true;
+			case "float":            return true;
+			case "int":              return true;
+			case "uint":             return true;
+			case "long":             return true;
+			case "ulong":            return true;
+			case "short":            return true;
+			case "ushort":           return true;
+			case "string":           return true;
+		  case "ReportOutputType": return true;
+		  case "StorageType":      return true;
+			case "CodeExtractType":  return true;
 			default: throw new Exception("Unknown type '" + type + "' found in configuration file.");
 		}
 	}

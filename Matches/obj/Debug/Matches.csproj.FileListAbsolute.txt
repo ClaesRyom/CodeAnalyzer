@@ -7,15 +7,6 @@ C:\CLR\TFS\Tools\Code Analyzer\Matches\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\TFS\Tools\Code Analyzer\Matches\obj\Debug\Matches.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\Matches\obj\Debug\CodeAnalyzer.Matches.dll
 C:\CLR\TFS\Tools\Code Analyzer\Matches\obj\Debug\CodeAnalyzer.Matches.pdb
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.dll
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.pdb
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Mediator.dll
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\FundamentalBuildingBlocks.dll
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Mediator.pdb
-C:\GitHub\CodeAnalyzer\Matches\bin\Debug\FundamentalBuildingBlocks.xml
-C:\GitHub\CodeAnalyzer\Matches\obj\Debug\Matches.csprojResolveAssemblyReference.cache
-C:\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.dll
-C:\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.pdb
 C:\CLR\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.dll
 C:\CLR\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.pdb
 C:\CLR\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Mediator.dll
@@ -25,3 +16,12 @@ C:\CLR\GitHub\CodeAnalyzer\Matches\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\Matches\obj\Debug\Matches.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.dll
 C:\CLR\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.pdb
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.dll
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Matches.pdb
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\FundamentalBuildingBlocks.dll
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\Matches\bin\Debug\FundamentalBuildingBlocks.xml
+C:\GitHub\CodeAnalyzer\Matches\obj\Debug\Matches.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.dll
+C:\GitHub\CodeAnalyzer\Matches\obj\Debug\CodeAnalyzer.Matches.pdb

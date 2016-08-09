@@ -7,15 +7,6 @@ C:\CLR\TFS\Tools\Code Analyzer\Engine\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\TFS\Tools\Code Analyzer\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\Engine\obj\Debug\CodeAnalyzer.Engine.dll
 C:\CLR\TFS\Tools\Code Analyzer\Engine\obj\Debug\CodeAnalyzer.Engine.pdb
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.dll
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.pdb
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Mediator.dll
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\FundamentalBuildingBlocks.dll
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Mediator.pdb
-C:\GitHub\CodeAnalyzer\Engine\bin\Debug\FundamentalBuildingBlocks.xml
-C:\GitHub\CodeAnalyzer\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
-C:\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.dll
-C:\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.pdb
 C:\CLR\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.dll
 C:\CLR\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.pdb
 C:\CLR\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Mediator.dll
@@ -25,3 +16,12 @@ C:\CLR\GitHub\CodeAnalyzer\Engine\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.dll
 C:\CLR\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.pdb
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.dll
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Engine.pdb
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\FundamentalBuildingBlocks.dll
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\Engine\bin\Debug\FundamentalBuildingBlocks.xml
+C:\GitHub\CodeAnalyzer\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.dll
+C:\GitHub\CodeAnalyzer\Engine\obj\Debug\CodeAnalyzer.Engine.pdb

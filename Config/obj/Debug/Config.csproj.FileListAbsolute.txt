@@ -12,20 +12,6 @@ C:\CLR\TFS\Tools\Code Analyzer\Config\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\TFS\Tools\Code Analyzer\Config\obj\Debug\Config.csprojResolveAssemblyReference.cache
 C:\CLR\TFS\Tools\Code Analyzer\Config\obj\Debug\CodeAnalyzer.Config.dll
 C:\CLR\TFS\Tools\Code Analyzer\Config\obj\Debug\CodeAnalyzer.Config.pdb
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\Log.config
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.config
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.xsd
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Config.dll
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Config.pdb
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Mediator.dll
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Version.dll
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\FundamentalBuildingBlocks.dll
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Mediator.pdb
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Version.pdb
-C:\GitHub\CodeAnalyzer\Config\bin\Debug\FundamentalBuildingBlocks.xml
-C:\GitHub\CodeAnalyzer\Config\obj\Debug\Config.csprojResolveAssemblyReference.cache
-C:\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.dll
-C:\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.pdb
 C:\CLR\GitHub\CodeAnalyzer\Config\bin\Debug\Config\Log.config
 C:\CLR\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.config
 C:\CLR\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.xsd
@@ -40,3 +26,17 @@ C:\CLR\GitHub\CodeAnalyzer\Config\bin\Debug\FundamentalBuildingBlocks.xml
 C:\CLR\GitHub\CodeAnalyzer\Config\obj\Debug\Config.csprojResolveAssemblyReference.cache
 C:\CLR\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.dll
 C:\CLR\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.pdb
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\Log.config
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.config
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\Config\rules.xsd
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Config.dll
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Config.pdb
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Mediator.dll
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Version.dll
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\FundamentalBuildingBlocks.dll
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Mediator.pdb
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\CodeAnalyzer.Version.pdb
+C:\GitHub\CodeAnalyzer\Config\bin\Debug\FundamentalBuildingBlocks.xml
+C:\GitHub\CodeAnalyzer\Config\obj\Debug\Config.csprojResolveAssemblyReference.cache
+C:\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.dll
+C:\GitHub\CodeAnalyzer\Config\obj\Debug\CodeAnalyzer.Config.pdb

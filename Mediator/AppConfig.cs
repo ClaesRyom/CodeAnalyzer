@@ -12,6 +12,7 @@ namespace CodeAnalyzer.Mediator
 
   using Configuration;
   using Exceptions.Configuration;
+  using Engine;
   using Output;
   
 
@@ -104,20 +105,20 @@ namespace CodeAnalyzer.Mediator
     public class Engine
     {
       /// <summary>
-      /// Instead of only extracting a couple of line before and after a match the whole file can be extracted instead. Setting this to 'true' will result in extracting the whole file and the two keys 'LineBeforeMatch' and 'LinesAfterMatch' are disabled.
+      /// Valid assignments are 'Match', 'Lines' and 'File'. 
       /// </summary>
       [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations")]
-      public static bool WholeFileInExtract
+      public static CodeExtractType CodeExtract
       {
         get
         {
-          string s = ConfigurationManager.AppSettings["Engine.WholeFileInExtract"];
+          string s = ConfigurationManager.AppSettings["Engine.CodeExtract"];
           if (string.IsNullOrEmpty(s))
-            throw new ConfigurationComponentException("Configuration key 'WholeFileInExtract' from the group 'Engine' was either null or empty.");
+            throw new ConfigurationComponentException("Configuration key 'CodeExtract' from the group 'Engine' was either null or empty.");
 
-          bool result;
-          if (!bool.TryParse(s.Trim(), out result))
-            throw new ConfigurationComponentException("Unable to parse the configuration key 'WholeFileInExtract' from the group 'Engine'.");
+          CodeExtractType result;
+          if (!CodeExtractType.TryParse(s.Trim(), out result))
+            throw new ConfigurationComponentException("Unable to parse the configuration key 'CodeExtract' from the group 'Engine'.");
 
           return result;
         }
@@ -191,7 +192,7 @@ namespace CodeAnalyzer.Mediator
       bool outputenabled = Report.OutputEnabled;
       string outputdir = Report.OutputDir;
       ReportOutputType outputtype = Report.OutputType;
-      bool wholefileinextract = Engine.WholeFileInExtract;
+      CodeExtractType codeextract = Engine.CodeExtract;
       int linesbeforematch = Engine.LinesBeforeMatch;
       int linesaftermatch = Engine.LinesAfterMatch;
       bool insertlinenumbersincodesummary = Engine.InsertLineNumbersInCodeSummary;

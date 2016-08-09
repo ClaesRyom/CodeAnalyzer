@@ -83,7 +83,7 @@ namespace CodeAnalyzer.Mediator.Identifiers
     public const string PLUS_PNG_FILE            = @"plus.png";
     public const string MINUS_PNG_FILE           = @"minus.png";
 
-    public const string EXCEL_FILE = @"Code Analyzer Report.xlsx";
+    public const string EXCEL_FILE = @"Code Analyzer - Matches.xlsx";
 
     public const string ALL_RULES_FILE                = @"AllRules.xml";
     public const string ALL_MATCHES_XML_FILE          = @"AllMatches.xml";

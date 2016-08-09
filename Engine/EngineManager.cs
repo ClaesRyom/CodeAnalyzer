@@ -8,6 +8,7 @@
 // -----------------------------------------------------------------------------
 
 using CodeAnalyzer.Mediator.DataAccess;
+using CodeAnalyzer.Mediator.Engine;
 
 namespace CodeAnalyzer.Engine
 {
@@ -128,6 +129,8 @@ namespace CodeAnalyzer.Engine
             FileSearchEngine fileSearchEngine = new FileSearchEngine(dir, linkFile2Language.Language.Extension);
             fileSearchEngine.ExcludeDirs = project.ExcludedDirectories.Select(d => d).ToList();
             fileSearchEngine.IncludeSubDirsInSearch = true;
+						fileSearchEngine.FileFoundDuringSearch.AddRange(project.Files.Select(f => f.Path));
+						fileSearchEngine.ExcludeFiles.AddRange(project.ExcludedFiles.Select((f => f)));
             fileSearchEngine.Search();
 
             // Adding all the files found with the extention given by 
@@ -235,7 +238,8 @@ namespace CodeAnalyzer.Engine
       {
 
         int startIndx = match.Index;
-        int endIndx   = startIndx + match.Groups[summary].Value.Length;
+//        int endIndx   = startIndx + match.Groups[summary].Value.Length;
+        int endIndx   = startIndx + (match.Length - 1);
 
         int accumulation    = 0;
         int startLineNumber = 0;
@@ -312,13 +316,36 @@ namespace CodeAnalyzer.Engine
 
 		private string ExtractTheMatchAndSurroundings(string[] lines, int sizeOfLines, int lineNumStartOfMatch, int lineNumEndOfMatch)
     {
-      bool extractWholeFile  = Settings.Engine.WholeFileInExtract;
-      bool injectLineNumbers = Settings.Engine.InsertLineNumbersInCodeSummary;
-      int  beforeMatch       = Settings.Engine.LinesBeforeMatch;
-      int  afterMatch        = Settings.Engine.LinesAfterMatch;
+			bool injectLineNumbers = Settings.Engine.InsertLineNumbersInCodeSummary;
+			bool extractWholeFile  = false;
+      int  beforeMatch       = 0;
+      int  afterMatch        = 0;
+			int  lineStart         = 0;
+			int  lineEnd           = 0;
 
-      int lineStart = 0;
-      int lineEnd   = 0;
+
+			switch (Settings.Engine.CodeExtract)
+			{
+				case CodeExtractType.Match:
+				{
+					break;
+				}
+				case CodeExtractType.Lines:
+				{
+					beforeMatch = Settings.Engine.LinesBeforeMatch;
+					afterMatch  = Settings.Engine.LinesAfterMatch;
+					break;
+				}
+				case CodeExtractType.File:
+				{
+					extractWholeFile  = true;
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
 
 
       // Find the start line number...

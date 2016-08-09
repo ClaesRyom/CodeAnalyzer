@@ -60,6 +60,7 @@ namespace CodeAnalyzer.Engine
       Extension              = extension;
       FileFoundDuringSearch  = new List<string>();
       ExcludeDirs            = new List<IDirectoryDefinition>();
+			ExcludeFiles           = new List<IFileDefinition>();
       IncludeSubDirsInSearch = true;
       Log                    = Out.ZoneFactory(Ids.REGION_SEARCH, GetType().Name);
     }
@@ -96,11 +97,17 @@ namespace CodeAnalyzer.Engine
     /// </summary>
     public List<string> FileFoundDuringSearch { get; private set; }
 
-    /// <summary>
-    /// Gets or Sets ExcludeDirs. List of directories that must be excluded 
-    /// from the search. Remember that the directory name are case sensitive!
-    /// </summary>
-    public List<IDirectoryDefinition> ExcludeDirs { get; set; }
+		/// <summary>
+		/// Gets or Sets ExcludeFiles. List of files that must be excluded 
+		/// from the search. Remember that the file name are case sensitive!
+		/// </summary>
+		public List<IFileDefinition> ExcludeFiles { get; set; }
+
+		/// <summary>
+		/// Gets or Sets ExcludeDirs. List of directories that must be excluded 
+		/// from the search. Remember that the directory name are case sensitive!
+		/// </summary>
+		public List<IDirectoryDefinition> ExcludeDirs { get; set; }
 
     /// <summary>
     /// Gets or Sets IncludeSubDirsInSearch. Indicates whether or not directories
@@ -226,7 +233,25 @@ namespace CodeAnalyzer.Engine
 			#region Handle the found files
 			foreach (string file in files)
       {
-        FileFoundDuringSearch.Add(file);
+				bool exclude = false;
+				foreach (IFileDefinition exludedFile in ExcludeFiles)
+				{
+					if (!exludedFile.Enabled)
+						continue;
+
+					if (string.Compare(exludedFile.Path, file, StringComparison.OrdinalIgnoreCase) == 0)
+						exclude = true;
+				}
+
+				if (!exclude)
+				{
+					// Not excluded - let's continue...
+					IFileDefinition fileDef = ProxyHome.Instance.RetrieveConfigurationFactory(EngineKeyKeeper.Instance.AccessKey).ConfigurationFactory<IFileDefinition>(typeof(IFileDefinition));
+					fileDef.Enabled = true;
+					fileDef.Path = file;
+
+					FileFoundDuringSearch.Add(file);
+				}
 			}
 			#endregion
 		}

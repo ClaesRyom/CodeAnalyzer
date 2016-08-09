@@ -47,6 +47,15 @@ namespace CodeAnalyzer.Output
 
 
 		#region Interface IOutput impl. ............................................
+		private ExcelWorksheet FetchSheet(string sheetName, ExcelPackage excelPck)
+		{
+			if (excelPck.Workbook?.Worksheets?.Count > 0)
+			{
+				return excelPck.Workbook.Worksheets[sheetName];
+			}
+			return null;
+		}
+
 		public override void GenerateOutput(string outputRootDir)
 		{
 			#region Input validation
@@ -66,67 +75,46 @@ namespace CodeAnalyzer.Output
 			FileInfo newFile = new FileInfo(OutputFile);
 			#endregion
 
+
 			IMatchProxy matchProxy = ProxyHome.Instance.RetrieveMatchProxy(OutputKeyKeeper.Instance.AccessKey);
-			
-      using (ExcelPackage pck = new ExcelPackage(newFile))
+
+			using (ExcelPackage pck = new ExcelPackage(newFile))
       {
-        var wsData = pck.Workbook.Worksheets.Add("Matches");
+				int lastRow;
+				const string sheetName = @"Matches";
+	      bool printHeaders;
 
-        var dataRange = wsData.Cells["A1"].LoadFromCollection(
-            from m in ConvertMatchesToExcelFormat(matchProxy.Matches())
+				// Fetch existing worksheet named 'Matches', if it did not exist create a new...
+				ExcelWorksheet wsData = FetchSheet(sheetName, pck);
+				if (wsData == null)
+	      {
+					// This seem to be a new file whereas no worksheet named 'Matches' was found.
+					wsData = pck.Workbook.Worksheets.Add(sheetName);
+		      lastRow = 0;
+		      printHeaders = true;
+	      }
+				else
+	      {
+					// A worksheet named 'Matches' was found, so let's append our data to the buttom of the sheet.
+					lastRow = wsData.Dimension.End.Row;
+					printHeaders = false;
+				}
+
+				// Retrieve all the matches and prepare them for the excel format...
+				var dataRange = wsData.Cells["A" + (lastRow + 1)].LoadFromCollection(
+						from m in ConvertMatchesToExcelFormat(matchProxy.Matches())
 						orderby m.Timestamp
-            select m, 
-            true, OfficeOpenXml.Table.TableStyles.Medium2);                
-                
-        wsData.Cells[2, 2, dataRange.End.Row, 2].Style.Numberformat.Format   = "dd-mm-yyyy - hh:mm:ss";
-                
-        dataRange.AutoFitColumns();
+						select m,
+						printHeaders); // , OfficeOpenXml.Table.TableStyles.Medium2
 
-        //var wsPivot = pck.Workbook.Worksheets.Add("PivotSimple");
-        //var pivotTable1 = wsPivot.PivotTables.Add(wsPivot.Cells["A1"], dataRange, "PerEmploee");
+	      wsData.Cells[1, 1, 1, 14].Style.Font.Bold = true;
+				if (dataRange.End.Row >= 2)
+					wsData.Cells[2, 2, dataRange.End.Row, 2].Style.Numberformat.Format = "dd-mm-yyyy - hh:mm:ss";
 
-        //pivotTable1.RowFields.Add(pivotTable1.Fields[4]);
-        //var dataField = pivotTable1.DataFields.Add(pivotTable1.Fields[6]);
-        //dataField.Format="#,##0";
-        //pivotTable1.DataOnRows = true;
+				dataRange.AutoFitColumns();
 
-        //var chart = wsPivot.Drawings.AddChart("PivotChart", eChartType.Pie, pivotTable1);
-        //chart.SetPosition(1, 0, 4, 0);
-        //chart.SetSize(600, 400);
-                    
-        //var wsPivot2 = pck.Workbook.Worksheets.Add("PivotDateGrp");
-        //var pivotTable2 = wsPivot2.PivotTables.Add(wsPivot2.Cells["A3"], dataRange, "PerEmploeeAndQuarter");
-
-        //pivotTable2.RowFields.Add(pivotTable2.Fields["Name"]);
-                
-        ////Add a rowfield
-        //var rowField = pivotTable2.RowFields.Add(pivotTable2.Fields["OrderDate"]);
-        ////This is a date field so we want to group by Years and quaters. This will create one additional field for years.
-        //rowField.AddDateGrouping(eDateGroupBy.Years | eDateGroupBy.Quarters);
-        ////Get the Quaters field and change the texts
-        //var quaterField = pivotTable2.Fields.GetDateGroupField(eDateGroupBy.Quarters);
-        //quaterField.Items[0].Text = "<"; //Values below min date, but we use auto so its not used
-        //quaterField.Items[1].Text = "Q1";
-        //quaterField.Items[2].Text = "Q2";
-        //quaterField.Items[3].Text = "Q3";
-        //quaterField.Items[4].Text = "Q4";
-        //quaterField.Items[5].Text = ">"; //Values above max date, but we use auto so its not used
-                
-        ////Add a pagefield
-        //var pageField = pivotTable2.PageFields.Add(pivotTable2.Fields["Title"]);
-                
-        ////Add the data fields and format them
-        //dataField = pivotTable2.DataFields.Add(pivotTable2.Fields["SubTotal"]);
-        //dataField.Format = "#,##0";
-        //dataField = pivotTable2.DataFields.Add(pivotTable2.Fields["Tax"]);
-        //dataField.Format = "#,##0";
-        //dataField = pivotTable2.DataFields.Add(pivotTable2.Fields["Freight"]);
-        //dataField.Format = "#,##0";
-                
-        ////We want the datafields to appear in columns
-        //pivotTable2.DataOnRows = false;
-
-        pck.Save();
+				// Save the changes to file...
+				pck.Save();
       }
 		}
 
